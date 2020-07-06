@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Produto;
 
 class ProdutoController extends Controller
 {
+    private $produto;
+
+    public function __construct()
+    {
+      $this->produto = new Produto();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        return view('index');
+        dd($this->produto->all());
+        // return view('index');
     }
 
     /**

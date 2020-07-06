@@ -16,6 +16,10 @@ class CreateCategoriaTable extends Migration
       Schema::create('categoria', function (Blueprint $table) {
         $table->increments('id');
         $table->string('nome')->unique();
+        $table->string('descricao_resumida')->nullable();
+        $table->string('descricao_completa')->nullable();
+        $table->integer('lft')->unique();
+        $table->integer('rgt')->unique();
         $table->string('foto_url')->nullable();
         $table->timestamps();
       });
