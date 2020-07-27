@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/reader', 'ReaderController@index')->name('reader');
+Route::post('/qrcode', 'ReaderController@qrCodeRequestPost')->name('qrcode');
 
 Route::get('/admin', 'AuthController@dashboard')->name('admin');
 Route::get('/admin/login', 'AuthController@showLoginForm')->name('admin.login');

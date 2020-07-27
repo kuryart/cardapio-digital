@@ -10,4 +10,12 @@ class ReaderController extends Controller
   {
       return view('reader');
   }
+
+  public function qrCodeRequestPost(Request $request)
+  {
+    $input = $request->all();
+    \Log::info($input);
+
+    return response()->json(['success'=>'Got Simple Ajax Request.']);    
+  }
 }
