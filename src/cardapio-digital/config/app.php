@@ -178,6 +178,7 @@ return [
         /*
          * Custom Providers...
          */
+         App\Providers\ViewServiceProvider::class,
     ],
 
     /*

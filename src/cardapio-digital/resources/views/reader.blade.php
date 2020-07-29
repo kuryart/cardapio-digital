@@ -16,7 +16,7 @@
 
       $.ajax({
          type:'POST',
-         url:"{{ route('qrcode') }}",
+         url:"{{ route('reader.request') }}",
          data:{qrcode:qrCodeMessage},
          success:function(data){
             alert(data.success);

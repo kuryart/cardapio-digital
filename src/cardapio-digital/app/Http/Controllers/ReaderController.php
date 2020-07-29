@@ -16,6 +16,6 @@ class ReaderController extends Controller
     $input = $request->all();
     \Log::info($input);
 
-    return response()->json(['success'=>'Got Simple Ajax Request.']);    
+    return response()->json(['success'=>'Got Simple Ajax Request.']);
   }
 }

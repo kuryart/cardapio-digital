@@ -18,9 +18,12 @@ Route::get('/', 'ProdutoController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// QR Code Reader
 Route::get('/reader', 'ReaderController@index')->name('reader');
-Route::post('/qrcode', 'ReaderController@qrCodeRequestPost')->name('qrcode');
-
+Route::post('reader/request', 'ReaderController@qrCodeRequestPost')->name('reader.request');
+// QR Code
+Route::resource('qrCodes','QrCodeController');
+// Admin
 Route::get('/admin', 'AuthController@dashboard')->name('admin');
 Route::get('/admin/login', 'AuthController@showLoginForm')->name('admin.login');
 Route::get('/admin/logout', 'AuthController@logout')->name('admin.logout');
