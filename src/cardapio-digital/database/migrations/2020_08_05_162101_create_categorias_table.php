@@ -6,30 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCategoriasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
       Schema::create('categorias', function (Blueprint $table) {
-        $table->increments('id');
+        $table->id();
         $table->string('nome')->unique();
         $table->string('descricao_resumida')->nullable();
         $table->string('descricao_completa')->nullable();
-        $table->integer('lft')->unique();
-        $table->integer('rgt')->unique();
+        $table->foreignId('secao_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
         $table->string('foto_url')->nullable();
         $table->timestamps();
       });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('categorias');

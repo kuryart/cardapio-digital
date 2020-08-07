@@ -22,14 +22,14 @@ class QrCodeController extends Controller
 
   public function store(Request $request)
   {
-      $request->validate([
-          'hash' => 'required',
-      ]);
+      $params = [
+          "hash" => bin2hex(random_bytes(64)),
+      ];
 
-      QrCode::create($request->all());
+      QrCode::create($params);
 
-      return redirect()->route('qrCodes.index')
-                      ->with('success','QR Code gerado com sucesso.');
+      return redirect()->route('admin')
+                      ->with('viewId',1);
   }
 
   public function show(QrCode $qrCode)

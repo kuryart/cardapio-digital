@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function dashboard()
+    public function dashboard($viewId = 2)
     {
       if (Auth::check() === true)
       {
-        return view('admin.dashboard');
+        return view('admin.dashboard')->with('viewId',$viewId);
       }
 
       return redirect()->route('admin.login');
@@ -28,7 +28,7 @@ class AuthController extends Controller
 
       if(!filter_var($request->email, FILTER_VALIDATE_EMAIL))
       {
-        return redirect()->back()->withInput()->withErrors(['Email inválido.']);        
+        return redirect()->back()->withInput()->withErrors(['Email inválido.']);
       }
 
       $credentials =

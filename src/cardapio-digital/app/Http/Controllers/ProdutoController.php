@@ -7,87 +7,66 @@ use App\Models\Produto;
 
 class ProdutoController extends Controller
 {
-    private $produto;
-
-    public function __construct()
-    {
-      $this->produto = new Produto();
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        dd($this->produto->all());
-        // return view('index');
+      $produtos = Produto::latest()->paginate(10);
+
+      return view('produtos.index',compact('produtos'))
+          ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+      return view('produtos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+          'nome' => 'required',
+          'descricao_resumida' => 'required',
+          'descricao_completa' => 'required',
+          'preco' => 'required',
+          'foto_url'
+      ]);
+
+      Produto::create($request->all());
+
+      return redirect()->route('produtos.index')
+                      ->with('success','QR Code gerado com sucesso.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Produto $produto)
     {
-        //
+        return view('produtos.show',compact('produto'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Produto $produto)
     {
-        //
+        return view('produtos.edit',compact('produto'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Produto $produto)
     {
-        //
+      $request->validate([
+          'nome' => 'required',
+          'descricao_resumida' => 'required',
+          'descricao_completa' => 'required',
+          'preco' => 'required',
+          'foto_url'
+      ]);
+
+      $produto->update($request->all());
+
+      return redirect()->route('produtos.index')
+                      ->with('success','Produto atualizado com sucesso.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Produto $produto)
     {
-        //
+      $produto->delete();
+
+      return redirect()->route('produtos.index')
+                      ->with('success','Produto deletado com sucesso.');
     }
 }
