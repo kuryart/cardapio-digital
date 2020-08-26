@@ -11,9 +11,7 @@ class CreateSecaosTable extends Migration
         Schema::create('secaos', function (Blueprint $table) {
             $table->id();
             $table->string('nome')->unique();
-            $table->string('descricao_resumida');
-            $table->string('descricao_completa');
-            $table->string('foto_url')->nullable();
+            $table->string('descricao')->nullable();
             $table->timestamps();
         });
     }

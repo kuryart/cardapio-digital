@@ -4,8 +4,7 @@
   <div class="wrapper">
 
     <div class="cardapio hide">
-      <h1>Cardápio</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo doloremque tenetur suscipit dolore est sequi nesciunt, architecto assumenda vitae cupiditate cumque voluptate repudiandae, temporibus ad rem asperiores sed distinctio dolores!</p>
+      @include('cardapio_admin.index')
     </div>
 
     <div class="qrcode hide">

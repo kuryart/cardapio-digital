@@ -11,10 +11,8 @@ class CreateCategoriasTable extends Migration
       Schema::create('categorias', function (Blueprint $table) {
         $table->id();
         $table->string('nome')->unique();
-        $table->string('descricao_resumida')->nullable();
-        $table->string('descricao_completa')->nullable();
+        $table->string('descricao')->nullable();
         $table->foreignId('secao_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-        $table->string('foto_url')->nullable();
         $table->timestamps();
       });
     }

@@ -47,5 +47,3 @@
     </tr>
     @endforeach
 </table>
-
-{!! $qrCodes->links() !!}

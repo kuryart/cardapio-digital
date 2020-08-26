@@ -8,19 +8,17 @@ class Categoria extends Model
 {
   protected $fillable = [
       'nome',
-      'secao_id',
-      'descricao_resumida',
-      'descricao_completa',
-      'foto_url'
+      'descricao',
+      'secao_id'
   ];
 
-  public function relProduto()
+  public function produtos()
   {
-    return $this->hasMany('App\Models\Produto', 'id');
+    return $this->hasMany('App\Models\Produto');
   }
 
-  public function relSecao()
+  public function secao()
   {
-    return $this->hasOne('App\Models\Secao');
+    return $this->belongsTo('App\Models\Secao');
   }
 }

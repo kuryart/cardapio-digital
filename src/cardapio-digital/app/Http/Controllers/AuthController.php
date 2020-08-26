@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Secao;
+use App\Models\Categoria;
+use App\Models\Produto;
+use App\Models\QrCode;
 
 class AuthController extends Controller
 {
@@ -11,7 +15,13 @@ class AuthController extends Controller
     {
       if (Auth::check() === true)
       {
-        return view('admin.dashboard')->with('viewId',$viewId);
+        $secaos = Secao::all();
+        $categorias = Categoria::all();
+        $produtos = Produto::all();
+        $qrCodes = QrCode::all();
+
+        // return view('admin.dashboard')->with('viewId',$viewId);
+        return view('admin.dashboard')->with(compact('secaos', 'categorias', 'produtos', 'qrCodes', 'viewId'));
       }
 
       return redirect()->route('admin.login');

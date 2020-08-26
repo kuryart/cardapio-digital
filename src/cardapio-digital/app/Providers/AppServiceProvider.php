@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        $qrCodes = \App\Models\QrCode::latest()->paginate(10);
-
-        View::share('qrCodes', $qrCodes);
+        // $qrCodes = \App\Models\QrCode::latest()->paginate(10);
+        //
+        // View::share('qrCodes', $qrCodes);
 
         // return view('qr_codes.index',compact('qrCodes'))
         //     ->with('i', (request()->input('page', 1) - 1) * 5);

@@ -4,7 +4,7 @@
             <h2>Adicionar Seção</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('secaos.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('secaos.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
     </div>
 @endif
 
-<form action="{{ route('secaos.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('secaos.store') }}" method="POST">
     @csrf
 
      <div class="row">
@@ -32,25 +32,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Descrição Resumida:</strong>
-                <textarea class="form-control" style="height:150px" name="descricao_resumida" placeholder="Descrição Resumida"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Descrição Completa:</strong>
-                <textarea class="form-control" style="height:150px" name="descricao_completa" placeholder="Descrição Completa"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Foto:</strong>
-                <input id="image" type="file" name="image" accept=".jpeg,.png,.jpg,.gif,.svg">
+                <strong>Descrição</strong>
+                <textarea class="form-control" style="height:150px" name="descricao" placeholder="Descrição"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Ok</button>
         </div>
     </div>
-
 </form>

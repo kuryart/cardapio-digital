@@ -4,7 +4,7 @@
             <h2>Seções</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('secaos.create') }}">Criar nova seção</a>
+            <a class="btn btn-success" href="{{ route('secaos.create') }}">Criar Nova Seção</a>
         </div>
     </div>
 </div>
@@ -19,18 +19,14 @@
     <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Descrição Resumida</th>
-        <th>Descrição Completa</th>
-        <th>Foto</th>
+        <th>Descrição</th>
         <th width="280px">Ação</th>
     </tr>
     @foreach ($secaos as $secao)
     <tr>
-        <td>{{ ++$i }}</td>
+        <td>{{ $secao->id }}</td>
         <td>{{ $secao->nome }}</td>
-        <td>{{ $secao->descricao_resumida }}</td>
-        <td>{{ $secao->descricao_completa }}</td>
-        <td><img src="{{ $secao->foto_url }}" alt=""></td>
+        <td>{{ $secao->descricao }}</td>
         <td>
             <form action="{{ route('secaos.destroy',$secao->id) }}" method="POST">
 

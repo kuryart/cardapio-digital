@@ -5,7 +5,7 @@
   </head>
   <body>
     @include('admin.navbar')
-    @yield('content')
+      @yield('content')
     @include('admin.scripts')
   </body>
 </html>

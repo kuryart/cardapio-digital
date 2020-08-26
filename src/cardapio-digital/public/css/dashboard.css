@@ -1,4 +1,84 @@
-body, html {
+.hide {
+  display:none;
+}
+
+.masthead {
+    display: block;
+    height: 20vh;
+    width: 100%;
+    background-image: url("/images/cardapio-banner.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    background-size: auto 50%;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.navbar{
+  background-color: #080705ff;
+}
+
+.nav-link{
+  color: #fffffaff;
+}
+
+.card-header{
+  background-color: #40434eff;
+}
+
+/* link */
+.btn-link {
+  color: #fffffaff;
+}
+
+/* unvisited link */
+.btn-link:link {
+  color: #fffffaff;
+}
+
+/* visited link */
+.btn-link:visited {
+  color: #702632ff;
+}
+
+/* mouse over link */
+.btn-link:hover {
+  color: #C1495D;
+}
+
+/* selected link */
+.btn-link:active {
+  color: #702632ff;
+}
+
+.card{
+  /* border-color: #40434eff; */
+  border: none;
+}
+
+.card-body{
+  background-color: #BCBEC8;
+  border: 1px;
+  border-color: #702632ff !important;
+}
+
+.card-body-produto{
+  background-color: #fffffaff !important;
+}
+
+#btn-add-secao {
+  border-radius: 50%;
+  background-color: #F03A47;
+  opacity: 80%;
+  border: none;
+  /* font-size: 10px; */
+}
+
+/* #div-btn-add-secao{
+
+} */
+
+/* body, html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -13,7 +93,6 @@ body, html {
 .menu {
     width: 100%;
     height: 75px;
-    /* background-color: #000000; */
     background-color: #212528;
     position: fixed;
     top:0;
@@ -61,23 +140,11 @@ a {
     line-height: 50px;
 }
 #cardapio {
-    /* background-color: grey; */
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
 #qrcode {
-    /* background-image: url(images/qrcode-bg.png); */
     height: 100%;
     width: 100%;
-}
-#about {
-    background-color: blue;
-    height: 100%;
-    width: 100%;
-}
-#contact {
-    background-color: red;
-    height: 100%;
-    width: 100%;
-}
+} */

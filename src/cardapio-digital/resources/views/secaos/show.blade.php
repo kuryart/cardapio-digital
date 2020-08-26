@@ -18,20 +18,8 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Descrição Resumida:</strong>
-            {{ $secao->descricao_resumida }}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Descrição Completa:</strong>
-            {{ $secao->descricao_completa }}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Foto:</strong>
-            <img src="{{ $secao->foto_url }}" alt="">
+            <strong>Descrição:</strong>
+            {{ $secao->descricao }}
         </div>
     </div>
 </div>

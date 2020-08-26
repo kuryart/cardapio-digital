@@ -1,12 +1,14 @@
 @extends('templates.template')
 
 @section('content')
+
+
   <div id="reader" width="600px"></div>
   <script src="{{url('/js/html5-qrcode.min.js')}}"></script>
   <script>
     function onScanSuccess(qrCodeMessage) {
     	// handle on success condition with the decoded message
-      // console.log(`${qrCodeMessage}`);
+      console.log(`${qrCodeMessage}`);
 
       $.ajaxSetup({
           headers: {
@@ -18,9 +20,20 @@
          type:'POST',
          url:"{{ route('reader.request') }}",
          data:{qrcode:qrCodeMessage},
-         success:function(data){
-            alert(data.success);
+         // =====
+         // processData: false,
+         // contentType: false,
+         // cache: false,
+         success: function(data) {
+             console.log(data);
+         },
+         error: function(data) {
+             console.log("error");
          }
+         // =====
+         // success:function(data){
+         //    alert(data.success);
+         // }
       });
     }
 

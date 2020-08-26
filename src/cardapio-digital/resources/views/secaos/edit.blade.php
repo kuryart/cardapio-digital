@@ -4,7 +4,7 @@
             <h2>Editar Seção</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('secaos.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('secaos.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
@@ -33,20 +33,8 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Descrição Resumida:</strong>
-                <textarea class="form-control" style="height:150px" name="descricao_resumida" placeholder="Descrição Resumida">{{ $secao->descricao_resumida }}</textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Descrição Completa:</strong>
-                <textarea class="form-control" style="height:150px" name="descricao_completa" placeholder="Descrição Complet6a">{{ $secao->descricao_completa }}</textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Foto:</strong>
-                <input id="image" type="file" name="image" accept=".jpeg,.png,.jpg,.gif,.svg">
+                <strong>Descrição:</strong>
+                <textarea class="form-control" style="height:150px" name="descricao" placeholder="Descrição">{{ $secao->descricao }}</textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

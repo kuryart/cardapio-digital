@@ -8,15 +8,18 @@ class Produto extends Model
 {
     protected $fillable = [
         'nome',
+        'descricao',
         'categoria_id',
-        'descricao_resumida',
-        'descricao_completa',
-        'preco',
         'foto_url'
     ];
 
-    public function relCategoria()
+    public function precos()
     {
-      return $this->hasOne('App\Models\Categoria');
+      return $this->hasMany('App\Models\Preco');
+    }
+
+    public function categoria()
+    {
+      return $this->belongsTo('App\Models\Categoria');
     }
 }

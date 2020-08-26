@@ -12,10 +12,8 @@ class CreateProdutosTable extends Migration
       {
         $table->id();
         $table->string('nome')->unique();
+        $table->string('descricao');
         $table->foreignId('categoria_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-        $table->string('descricao_resumida');
-        $table->string('descricao_completa');
-        $table->decimal('preco', 5, 2);
         $table->string('foto_url')->nullable();
         $table->timestamps();
       });
