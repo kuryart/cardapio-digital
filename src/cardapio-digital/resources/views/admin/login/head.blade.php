@@ -10,7 +10,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <!-- === Stylesheets === -->
 <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
-<link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/login.css') }}" rel="stylesheet" />
 <!-- === Ajax === -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <!-- === Token for Ajax Requests === -->

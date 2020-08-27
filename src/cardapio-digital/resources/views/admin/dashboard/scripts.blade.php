@@ -30,7 +30,7 @@
   })
 </script>
 
-<script>
+<!-- <script>
 $(window).on('resize load orientationchange', function(){
     responsive_calc();
 });
@@ -49,4 +49,4 @@ var responsive_calc = function(){
     // set background-size height to match the element instead of the viewport
     $('.masthead').css('background-size', 'auto ' + bgHeightPercent + '%');
 }
-</script>
+</script> -->

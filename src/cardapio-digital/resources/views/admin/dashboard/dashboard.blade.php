@@ -1,10 +1,10 @@
-@extends('admin.layout')
+@extends('admin.dashboard.layout')
 
 @section('content')
   <div class="wrapper">
 
     <div class="cardapio hide">
-      @include('cardapio_admin.index')
+      @include('admin.dashboard.cardapio.cardapio')
     </div>
 
     <div class="qrcode hide">

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>
-    @include('admin.head')
+    @include('admin.dashboard.head')
   </head>
   <body>
-    @include('admin.navbar')
+    @include('admin.dashboard.navbar')
       @yield('content')
-    @include('admin.scripts')
+    @include('admin.dashboard.scripts')
   </body>
 </html>

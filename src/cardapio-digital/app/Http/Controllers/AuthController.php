@@ -21,7 +21,7 @@ class AuthController extends Controller
         $qrCodes = QrCode::all();
 
         // return view('admin.dashboard')->with('viewId',$viewId);
-        return view('admin.dashboard')->with(compact('secaos', 'categorias', 'produtos', 'qrCodes', 'viewId'));
+        return view('admin.dashboard.dashboard')->with(compact('secaos', 'categorias', 'produtos', 'qrCodes', 'viewId'));
       }
 
       return redirect()->route('admin.login');
@@ -29,7 +29,7 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-      return view('admin.form_login');
+      return view('admin.login.login');
     }
 
     public function login(Request $request)

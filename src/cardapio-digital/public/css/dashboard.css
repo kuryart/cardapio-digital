@@ -1,17 +1,45 @@
-.hide {
-  display:none;
+body {
+  /* background-image: url("/images/background.jpg"); */
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.masthead {
-    display: block;
-    height: 20vh;
-    width: 100%;
-    background-image: url("/images/cardapio-banner.png");
-    background-repeat: no-repeat;
-    background-position: center 10px;
-    background-size: auto 50%;
-    background-attachment: fixed;
-    position: relative;
+.main-div{
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+.masthead{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.cardapio-heading{
+  font-family: 'Tangerine', cursive;
+  font-size: 5vw;
+  color: #c49a3e;
+  text-align: center;
+}
+
+.img-cardapio-header-top{
+  max-width: 30%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -1.5vw;
+  transform: scaleY(-1);
+}
+
+.img-cardapio-header-bottom{
+  max-width: 30%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2.5vw;
 }
 
 .navbar{
@@ -52,99 +80,33 @@
 }
 
 .card{
-  /* border-color: #40434eff; */
-  border: none;
+  border-color: #373A43;
+  border-width: thin;
+  border-radius: 5px;
 }
 
 .card-body{
   background-color: #BCBEC8;
-  border: 1px;
-  border-color: #702632ff !important;
+  /* border: 1px; */
+  /* border-color: #702632ff !important; */
 }
 
 .card-body-produto{
   background-color: #fffffaff !important;
 }
 
-#btn-add-secao {
-  border-radius: 50%;
-  background-color: #F03A47;
-  opacity: 80%;
-  border: none;
-  /* font-size: 10px; */
-}
-
-/* #div-btn-add-secao{
-
-} */
-
-/* body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    padding-top: 40px;
+.btn-circle.btn-sm {
+    width: 20px;
+    height: 20px;
+    padding: 1px 1px;
+    border-radius: 10px;
+    font-size: 9px;
+    text-align: center;
+    background-color: #c49a3e;
+    border: none;
+    opacity: 80%;
 }
 
 .hide {
   display:none;
 }
-
-.menu {
-    width: 100%;
-    height: 75px;
-    background-color: #212528;
-    position: fixed;
-    top:0;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-.light-menu {
-    width: 100%;
-    height: 75px;
-    background-color: rgba(255, 255, 255, 1);
-    position: fixed;
-    background-color:rgba(4, 180, 49, 0.6);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-#menu-center {
-    width: 980px;
-    height: 75px;
-    margin: 0 auto;
-}
-#menu-center ul {
-    margin: 15px 0 0 0;
-}
-#menu-center ul li {
-    list-style: none;
-    margin: 0 30px 0 0;
-    display: inline;
-}
-.active {
-    font-family:'Droid Sans', serif;
-    font-size: 14px;
-    color: #fff;
-    text-decoration: none;
-    line-height: 50px;
-}
-a {
-    font-family:'Droid Sans', serif;
-    font-size: 14px;
-    color: #fff;
-    text-decoration: none;
-    line-height: 50px;
-}
-#cardapio {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-#qrcode {
-    height: 100%;
-    width: 100%;
-} */
