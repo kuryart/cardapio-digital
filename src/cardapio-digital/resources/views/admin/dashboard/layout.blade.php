@@ -5,7 +5,7 @@
   </head>
   <body>
     @include('admin.dashboard.navbar')
-      @yield('content')
+    @yield('content')
     @include('admin.dashboard.scripts')
   </body>
 </html>

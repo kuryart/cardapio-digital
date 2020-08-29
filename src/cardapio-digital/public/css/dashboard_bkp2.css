@@ -51,17 +51,8 @@ body {
 }
 
 .card-header{
-  height: 200px;
+  background-color: #40434eff;
 }
-
-/* === BUTTONS */
-.card-button{
-  background-color: #524c4c;
-  color: #c79c60;
-}
-/* =============== */
-
-/* === BUTTON PRIMARY */
 
 /* link */
 .btn-link {
@@ -88,30 +79,19 @@ body {
   color: #702632ff;
 }
 
-/* =============== */
-
-.card-container{
-  margin: 25px 25px 25px 25px;
-}
-
-.card-button{
-}
-
 .card{
-  background-color: rgba(255, 255, 250, 0.8) !important;
   border-color: #373A43;
   border-width: thin;
   border-radius: 5px;
 }
 
 .card-body{
-  background-color: rgba(188, 190, 200, 0.2) !important;
-  border: 1px;
-  border-color: #702632ff !important;
+  background-color: #BCBEC8;
+  /* border: 1px; */
+  /* border-color: #702632ff !important; */
 }
 
 .card-body-produto{
-  background-color: rgba(188, 190, 200, 0.2) !important;
   background-color: #fffffaff !important;
 }
 

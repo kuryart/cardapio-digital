@@ -30,23 +30,19 @@
   })
 </script>
 
-<!-- <script>
-$(window).on('resize load orientationchange', function(){
-    responsive_calc();
-});
+<script>
+  // Menu Secao
+  function AddSecao(){
+    document.getElementById('btn-add-secao').click();
+	}
 
-var responsive_calc = function(){
+  function AddCategoria(){
+    document.getElementById('btn-add-categoria').click();
+  }
 
-    // get the viewport height
-    var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  var menuSecao = CtxMenu(".add-secao");
+  menuSecao.addItem("Adicionar Seção", AddSecao, Icon = "images/secao.svg");
+  menuSecao.addSeparator();
+  menuSecao.addItem("Adicionar Categoria", AddCategoria, Icon = "images/categoria.svg");
 
-    // get the element height
-    var bannerHeight = $('.masthead').height();
-
-    // get the integer percentage value difference between them
-    var bgHeightPercent = Math.ceil(bannerHeight/h*170);
-
-    // set background-size height to match the element instead of the viewport
-    $('.masthead').css('background-size', 'auto ' + bgHeightPercent + '%');
-}
-</script> -->
+</script>

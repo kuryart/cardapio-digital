@@ -11,7 +11,11 @@
 <!-- === Stylesheets === -->
 <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
 <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
-<link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" />
+<!-- <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" /> -->
+<link href="{{ asset('css/dashboard_bkp.css') }}" rel="stylesheet" />
+<!-- === Right Click Menu Context === -->
+<script src="{{ asset('js/ctxmenu.js') }}"></script>
+<link href="{{ asset('css/ctxmenu.css') }}" type="text/css" rel="stylesheet">
 <!-- === Ajax === -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <!-- === Token for Ajax Requests === -->
