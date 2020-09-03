@@ -2,15 +2,6 @@
 <div class="main-div">
   <!-- Header do cardápio -->
   <header class="masthead">
-    <!-- <div class="container-fluid">
-      <div class="row align-items-center justify-content-center">
-        <img class="img-cardapio-header" src="{{url('/images/arabesco.png')}}" alt="Arabesco">
-        <h1 class="cardapio-heading col-sm-auto">
-          Cardápio
-        </h1>
-      </div>
-    </div> -->
-
     <img class="img-cardapio-header-top" src="{{url('/images/arabesco.png')}}" alt="Arabesco">
     <h1 class="cardapio-heading">
       Cardápio
@@ -30,6 +21,7 @@
                 <button class="btn btn-link text-center col-sm-auto" type="button" data-toggle="collapse" data-target="#{{ 'secao-collapsible-'.$secao->id }}">
                   {{ $secao->nome }}
                 </button>
+
               </div>
             </div>
           <!-- </h2> -->

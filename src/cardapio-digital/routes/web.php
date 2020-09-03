@@ -21,6 +21,7 @@ Auth::routes();
 // === Home ===
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/main', 'HomeController@main')->name('main');
 Route::get('/cardapio', 'CardapioController@cardapio')->name('cardapio');
 // === QR Code Reader ===
 Route::get('/reader', 'ReaderController@index')->name('reader');

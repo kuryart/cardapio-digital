@@ -4,7 +4,7 @@
   <div class="wrapper">
 
     <div class="cardapio hide">
-      @include('admin.dashboard.cardapio.cardapio_bkp')
+      @include('admin.dashboard.cardapio.cardapio')
     </div>
 
     <div class="qrcode hide">

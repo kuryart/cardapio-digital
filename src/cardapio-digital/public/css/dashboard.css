@@ -1,132 +1,184 @@
+/* === Body === */
 body {
   /* background-image: url("/images/background.jpg"); */
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/images/background.jpg");
+  background-color: #e4e4e4;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-y: scroll;
 }
 
-.main-div{
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
+/* === Scrollbar === */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.masthead{
-  padding-top: 10px;
-  padding-bottom: 10px;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.cardapio-heading{
-  font-family: 'Tangerine', cursive;
-  font-size: 5vw;
-  color: #c49a3e;
-  text-align: center;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
 
-.img-cardapio-header-top{
-  max-width: 30%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: -1.5vw;
-  transform: scaleY(-1);
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-.img-cardapio-header-bottom{
-  max-width: 30%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -2.5vw;
+/* === Hide === */
+.hide {
+  display:none;
 }
 
+/* === Navbar === */
 .navbar{
   background-color: #080705ff;
+  font-family: 'Signika', sans-serif;
 }
 
 .nav-link{
   color: #fffffaff;
 }
 
-.card-header{
-  height: 200px;
+.fa-book-open{
+  color: #a07945;
 }
 
-/* === BUTTONS */
-.card-button{
-  background-color: #524c4c;
-  color: #c79c60;
+.nav-link:not(.nav-search):hover{
+  color: #a07945;
 }
-/* =============== */
 
-/* === BUTTON PRIMARY */
-
-/* link */
-.btn-link {
+.navbar-brand{
   color: #fffffaff;
 }
 
-/* unvisited link */
-.btn-link:link {
+.navbar-brand:hover{
+  color: #a07945;
+}
+
+.navbar-toggler-icon {
   color: #fffffaff;
+  padding-top: 4px;
 }
 
-/* visited link */
-.btn-link:visited {
-  color: #702632ff;
+/* === Search Bar === */
+#search-icon {
+  padding-right: 5px;
 }
 
-/* mouse over link */
-.btn-link:hover {
-  color: #C1495D;
-}
-
-/* selected link */
-.btn-link:active {
-  color: #702632ff;
-}
-
-/* =============== */
-
-.card-container{
-  margin: 25px 25px 25px 25px;
-}
-
-.card-button{
-}
-
+/* === Card === */
 .card{
-  background-color: rgba(255, 255, 250, 0.8) !important;
-  border-color: #373A43;
-  border-width: thin;
-  border-radius: 5px;
+  background-color: transparent;
 }
 
-.card-body{
-  background-color: rgba(188, 190, 200, 0.2) !important;
-  border: 1px;
-  border-color: #702632ff !important;
+.card-header{
 }
 
-.card-body-produto{
-  background-color: rgba(188, 190, 200, 0.2) !important;
-  background-color: #fffffaff !important;
+/* === Seção === */
+.secao-header{
+  background-color: #333333;
 }
 
-.btn-circle.btn-sm {
-    width: 20px;
-    height: 20px;
-    padding: 1px 1px;
-    border-radius: 10px;
-    font-size: 9px;
-    text-align: center;
-    background-color: #c49a3e;
-    border: none;
-    opacity: 80%;
+.secao-header .btn-link {
+  font-family: 'Lalezar', cursive;
+  font-size: 48px;
+  color: #e4e4e4;
 }
 
-.hide {
-  display:none;
+.secao-header .btn-link:hover {
+  color: #a07945;
+}
+
+/* === Categoria === */
+.categoria-wrapper{
+  margin-bottom: 10px;
+}
+
+.categoria-header{
+  background-color: #333333;
+}
+
+.categoria-header .btn-link {
+  font-family: 'Lalezar', cursive;
+  font-size: 28px;
+  color: #e4e4e4;
+}
+
+.categoria-header .btn-link:hover {
+  color: #a07945;
+}
+
+/* === Produto === */
+.produto-title {
+  font-weight: bold;
+}
+
+.produto-description {
+}
+
+.produto-price {
+  width: 60px;
+  background-color: #333333;
+  color: #e4e4e4;
+  text-align: center;
+}
+
+.produto-container{
+}
+
+.produto-container::after{
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  width: 100%; /* Change this to whatever width you want. */
+  padding-top: 3px; /* This creates some space between the element and the border. */
+  margin-bottom: 12px;
+  border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
+}
+
+/* === Expand/Collapse All Button*/
+#btn-expand-all {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #080705ff;
+  color: #fffffaff;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#btn-expand-all:hover {
+  background-color: #7c4a24;
+  /* color: #a07945; */
+}
+
+#btn-collapse-all {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #080705ff;
+  color: #fffffaff;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#btn-collapse-all:hover {
+  background-color: #7c4a24;
+  /* color: #a07945; */
 }

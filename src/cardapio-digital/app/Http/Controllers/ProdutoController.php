@@ -32,8 +32,7 @@ class ProdutoController extends Controller
 
       Produto::create($request->all());
 
-      return redirect()->route('produtos.index')
-                      ->with('success','QR Code gerado com sucesso.');
+      return redirect()->route('main');
     }
 
     public function show(Produto $produto)
