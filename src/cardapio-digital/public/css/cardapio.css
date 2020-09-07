@@ -28,11 +28,6 @@ body {
   background: #555;
 }
 
-/* === Hide === */
-.hide {
-  display:none;
-}
-
 /* === Navbar === */
 .navbar{
   background-color: #080705ff;
@@ -41,10 +36,6 @@ body {
 
 .nav-link{
   color: #fffffaff;
-}
-
-.fa-book-open{
-  color: #a07945;
 }
 
 .nav-link:not(.nav-search):hover{
@@ -69,16 +60,9 @@ body {
   padding-right: 5px;
 }
 
-/* === Inline Test */
-.inline-test{
-}
-
 /* === Card === */
 .card{
   background-color: transparent;
-}
-
-.card-header{
 }
 
 /* === Seção === */
@@ -120,17 +104,11 @@ body {
   font-weight: bold;
 }
 
-.produto-description {
-}
-
 .produto-price {
   width: 60px;
   background-color: #333333;
   color: #e4e4e4;
   text-align: center;
-}
-
-.produto-container{
 }
 
 .produto-container::after{

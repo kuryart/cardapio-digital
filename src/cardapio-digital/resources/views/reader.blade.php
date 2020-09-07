@@ -8,7 +8,7 @@
   <script>
     function onScanSuccess(qrCodeMessage) {
     	// handle on success condition with the decoded message
-      console.log(`${qrCodeMessage}`);
+      // console.log(`${qrCodeMessage}`);
 
       $.ajaxSetup({
           headers: {
@@ -20,20 +20,13 @@
          type:'POST',
          url:"{{ route('reader.request') }}",
          data:{qrcode:qrCodeMessage},
-         // =====
-         // processData: false,
-         // contentType: false,
-         // cache: false,
          success: function(data) {
              console.log(data);
+             window.location.href = "{{ route('cardapio') }}";
          },
          error: function(data) {
-             console.log("error");
+             console.log(data);
          }
-         // =====
-         // success:function(data){
-         //    alert(data.success);
-         // }
       });
     }
 

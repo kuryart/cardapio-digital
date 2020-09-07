@@ -1,288 +1,115 @@
-
-<!-- <a id="acollapse" href="javascript:jQuery('.collapse').collapse('hide'); jQuery('#acollapse').hide();jQuery('#aexpand').show();">Collapse All</a>
-<a id="aexpand" href="javascript:jQuery('.collapse').collapse('show'); jQuery('#aexpand').hide(); jQuery('#acollapse').show();" style="display: none;">Expand All</a> -->
-
 <div class="accordion" id="cardapio-accordion">
-
-  <!-- Seção 1 - BEGIN -->
-  <div class="card secao-wrapper">
-    <div class="card-header secao-header" id="secao1-header">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#secao1-collapse" aria-expanded="true" aria-controls="secao1-header">
-          LE COUVERT
-        </button>
-      </h2>
-    </div>
-    <div id="secao1-collapse" class="collapse show collapse-cardapio-item" aria-labelledby="secao1-header" data-parent="#cardapio-accordion">
-      <div class="card-body">
-
-        <!-- Categoria 1 - BEGIN -->
-        <div class="card categoria-wrapper">
-          <div class="card-header categoria-header" id="categoria1-header">
-            <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#categoria1-collapse" aria-expanded="true" aria-controls="categoria1-header">
-                CARPACCIOS
-              </button>
-            </h2>
-          </div>
-          <div id="categoria1-collapse" class="collapse show collapse-cardapio-item" aria-labelledby="categoria1-header" data-parent="#secao1-collapse">
-            <div class="card-body">
-
-              <!-- Produto 1 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas *</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">27,40</span>
+  @foreach($secaos as $secao)
+    <!-- Seção - BEGIN -->
+    <div class="card secao-wrapper">
+      <div class="card-header secao-header" id="{{ 'secao-header-'.$secao->id }}">
+        <h2 class="mb-0">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-11">
+                <button class="btn btn-link menu-secao" type="button" data-toggle="collapse" data-target="#{{ 'secao-collapse-'.$secao->id }}" aria-expanded="true" aria-controls="{{ 'secao-header-'.$secao->id }}">
+                  {{ $secao->nome }}
+                </button>
+              </div>
+              <div class="col-1">
+                <div class="dropdown">
+                  <button class="btn btn-primary" type="button" id="secao-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bars"></i>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="secao-dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </div>
               </div>
-              <!-- Produto 1 - END -->
-
-              <!-- Produto 2 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">127,40</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Produto 2 - END -->
-
             </div>
           </div>
-        </div>
-        <!-- Categoria 1 - END -->
-
-        <!-- Categoria 2 - BEGIN -->
-        <div class="card categoria-wrapper">
-          <div class="card-header categoria-header" id="categoria2-header">
-            <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#categoria2-collapse" aria-expanded="true" aria-controls="categoria2-header">
-                CARPACCIO
-              </button>
-            </h2>
-          </div>
-          <div id="categoria2-collapse" class="collapse show collapse-cardapio-item" aria-labelledby="categoria2-header" data-parent="#secao1-collapse">
-            <div class="card-body">
-
-              <!-- Produto 3 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
+        </h2>
+      </div>
+      <div id="{{ 'secao-collapse-'.$secao->id }}" class="collapse show collapse-cardapio-item" aria-labelledby="{{ 'secao-header-'.$secao->id }}" data-parent="#cardapio-accordion">
+        <div class="card-body">
+          @foreach($categorias as $categoria)
+            @if ($categoria->secao_id === $secao->id)
+              <!-- Categoria - BEGIN -->
+              <div class="card categoria-wrapper">
+                <div class="card-header categoria-header" id="{{ 'categoria-header-'.$categoria->id }}">
+                  <h2 class="mb-0">
+                    <div class="container-fluid">
+                      <div class="row align-items-center">
+                        <div class="col-11">
+                          <button class="btn btn-link menu-categoria" type="button" data-toggle="collapse" data-target="#{{ 'categoria-collapse-'.$categoria->id }}" aria-expanded="true" aria-controls="{{ 'categoria-header-'.$categoria->id }}">
+                            {{ $categoria->nome }}
+                          </button>
+                        </div>
+                        <div class="col-1">
+                          <div class="dropdown">
+                            <button class="btn btn-primary" type="button" id="categoria-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fa fa-bars"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="categoria-dropdown-menu">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">7,40</span>
+                  </h2>
+                </div>
+                <div id="{{ 'categoria-collapse-'.$categoria->id }}" class="collapse show collapse-cardapio-item" aria-labelledby="{{ 'categoria-header-'.$categoria->id }}" data-parent="#{{ 'secao-collapse-'.$secao->id }}">
+                  <div class="card-body">
+                    @foreach ($produtos as $produto)
+                      @if ($produto->categoria_id === $categoria->id)
+                        <!-- Produto - BEGIN -->
+                        <div class="container-fluid produto-container">
+                          <div class="row align-items-center">
+                            <div class="col-9 col-sm-10 col-md-10 col-lg-11">
+                              <div class="row">
+                                <div class="col-sm">
+                                  <span class="produto-title menu-produto">{{ $produto->nome }}</span>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm">
+                                  <span class="produto-description">{{ $produto->descricao }}</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-3 col-sm-2 col-md-2 col-lg-1">
+                              <span class="produto-price float-right">27,40</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Produto - END -->
+                        @endif
+                      @endforeach
                   </div>
                 </div>
               </div>
-              <!-- Produto 3 - END -->
-
-              <!-- Produto 4 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">27,40</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Produto 4 - END -->
-
-            </div>
-          </div>
+              <!-- Categoria - END -->
+              @endif
+            @endforeach
         </div>
-        <!-- Categoria 2 - END -->
-
       </div>
     </div>
-  </div>
-  <!-- Seção 1 - END -->
+    <!-- Seção - END -->
 
-  <!-- Seção 2 - BEGIN -->
-  <div class="card secao-wrapper">
-    <div class="card-header secao-header" id="secao2-header">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#secao2-collapse" aria-expanded="true" aria-controls="secao2-header">
-          LE COUVERT
-        </button>
-      </h2>
-    </div>
-    <div id="secao2-collapse" class="collapse show collapse-cardapio-item" aria-labelledby="secao2-header" data-parent="#cardapio-accordion">
-      <div class="card-body">
-
-        <!-- Categoria 3 - BEGIN -->
-        <div class="card categoria-wrapper">
-          <div class="card-header categoria-header" id="categoria3-header">
-            <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#categoria3-collapse" aria-expanded="true" aria-controls="categoria3-header">
-                CARPACCIOS
-              </button>
-            </h2>
-          </div>
-          <div id="categoria3-collapse" class="collapse show collapse-cardapio-item" aria-labelledby="categoria3-header" data-parent="#secao2-collapse">
-            <div class="card-body">
-
-              <!-- Produto 5 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas *</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">27,40</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Produto 5 - END -->
-
-              <!-- Produto 6 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">127,40</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Produto 6 - END -->
-
-            </div>
-          </div>
-        </div>
-        <!-- Categoria 3 - END -->
-
-        <!-- Categoria 4 - BEGIN -->
-        <div class="card categoria-wrapper">
-          <div class="card-header categoria-header" id="categoria2-header">
-            <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#categoria4-collapse" aria-expanded="true" aria-controls="categoria4-header">
-                CARPACCIO
-              </button>
-            </h2>
-          </div>
-          <div id="categoria4-collapse" class="collapse show collapse-cardapio-item" aria-labelledby="categoria4-header" data-parent="#secao2-collapse">
-            <div class="card-body">
-
-              <!-- Produto 7 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">7,40</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Produto 7 - END -->
-
-              <!-- Produto 8 - BEGIN -->
-              <div class="container-fluid produto-container">
-                <div class="row align-items-center">
-                  <div class="col-9 col-sm-10 col-md-10 col-lg-11">
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-title">CARPACCIO DO LENNON</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm">
-                        <span class="produto-description">Servido com honey mustard e tapenade de azeitonas pretas *</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3 col-sm-2 col-md-2 col-lg-1">
-                    <span class="produto-price float-right">27,40</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Produto 8 - END -->
-
-            </div>
-          </div>
-        </div>
-        <!-- Categoria 4 - END -->
-
-      </div>
-    </div>
-  </div>
-  <!-- Seção 2 - END -->
-
-  <!-- Expand/Collapse All Button -->
-  <button onclick="expandAll()" id="btn-expand-all" title="Expandir tudo"><i class="fa fa-plus"></i></button>
-  <button onclick="collapseAll()" id="btn-collapse-all" title="Recolher tudo"><i class="fa fa-minus"></i></button>
+  @endforeach
 </div>
+
+<!-- Expand/Collapse All Button -->
+<button onclick="expandAll()" id="btn-expand-all" title="Expandir tudo"><i class="fa fa-plus"></i></button>
+<button onclick="collapseAll()" id="btn-collapse-all" title="Recolher tudo"><i class="fa fa-minus"></i></button>
+
+<!-- Botões que ativam as Modals -->
+<button id="btn-add-secao" type="button" class="btn" data-toggle="modal" data-target="#add-secao-modal"style="display: none;">
+</button>
+<button id="btn-add-categoria" type="button" class="btn" data-toggle="modal" data-target="#add-categoria-modal"style="display: none;">
+</button>
+<button id="btn-add-produto" type="button" class="btn" data-toggle="modal" data-target="#add-produto-modal"style="display: none;">
+</button>
+
+<!-- Modals -->
+@include('admin.dashboard.cardapio.modals')

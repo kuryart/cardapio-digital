@@ -3,19 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use App\Models\QrCode;
 
 class ReaderController extends Controller
 {
   public function index()
   {
-      return view('reader');
+    return view('reader');
   }
 
   public function qrCodeRequestPost(Request $request)
   {
     $input = $request->all();
-    \Log::info($input);
+    // $qrCodes = QrCode::all();
 
-    return response()->json(['success'=>'Got Simple Ajax Request.']);
+    if (QrCode::where('hash', '=', $input['qrcode'])->exists())
+    {
+      Log::debug($input);
+      return response()->json(['success'=>'Sucesso.']);
+    }
+
+    return response()->json(['error'=>'Houve um erro.']);
   }
 }
