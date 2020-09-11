@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\SecaosImport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Models\Secao;
 use Illuminate\Support\Facades\Storage;
@@ -85,4 +87,17 @@ class SecaoController extends Controller
     return redirect()->route('secaos.index')
                     ->with('success','Seção excluída com sucesso.');
   }
+
+  public function import()
+  {
+      Excel::import(new SecaosImport, 'planilha-teste1.xlsx', 'public');
+
+      return redirect('/')->with('success', 'All good!');
+  }
+
+  public function testPage()
+  {
+    return view('import_test');
+  }
+
 }

@@ -10,7 +10,7 @@ class ReaderController extends Controller
 {
   public function index()
   {
-    return view('reader');
+    return view('reader.reader');
   }
 
   public function qrCodeRequestPost(Request $request)
