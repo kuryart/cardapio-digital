@@ -7,6 +7,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Models\Secao;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class SecaoController extends Controller
 {
@@ -69,14 +70,11 @@ class SecaoController extends Controller
   {
     $request->validate([
         'nome' => 'required',
-        'descricao_resumida' => 'required',
-        'descricao_completa' => 'required',
-        'foto_url'
     ]);
 
     $secao->update($request->all());
 
-    return redirect()->route('secaos.index')
+    return redirect()->route('admin')
                       ->with('success','Seção atualizada com sucesso.');
   }
 
@@ -84,8 +82,8 @@ class SecaoController extends Controller
   {
     $secao->delete();
 
-    return redirect()->route('secaos.index')
-                    ->with('success','Seção excluída com sucesso.');
+    return redirect()->route('admin')
+                      ->with('success','Seção atualizada com sucesso.');
   }
 
   public function import()

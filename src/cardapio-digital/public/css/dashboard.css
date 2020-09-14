@@ -69,16 +69,9 @@ body {
   padding-right: 5px;
 }
 
-/* === Inline Test */
-.inline-test{
-}
-
 /* === Card === */
 .card{
   background-color: transparent;
-}
-
-.card-header{
 }
 
 /* === Seção === */
@@ -94,6 +87,10 @@ body {
 
 .secao-header .btn-link:hover {
   color: #a07945;
+}
+
+.secao-container{
+  margin-left: -10px;
 }
 
 /* === Categoria === */
@@ -115,12 +112,17 @@ body {
   color: #a07945;
 }
 
+.categoria-container{
+  margin-left: -10px;
+}
+
+.categoria-card-body{
+  background-color: #fffffaff;
+}
+
 /* === Produto === */
 .produto-title {
   font-weight: bold;
-}
-
-.produto-description {
 }
 
 .produto-price {
@@ -128,9 +130,6 @@ body {
   background-color: #333333;
   color: #e4e4e4;
   text-align: center;
-}
-
-.produto-container{
 }
 
 .produto-container::after{
@@ -142,7 +141,59 @@ body {
   border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
 }
 
-/* === Expand/Collapse All Button*/
+/* === Button dropdown menu Secao === */
+.btn-dropdown-menu-secao{
+  border: 1px solid #fffffaff;
+  background-color: transparent;
+  font-size: 0.8em;
+  margin-bottom: 6px;
+  width: 72px;
+}
+
+.btn-dropdown-menu-secao:hover, .btn-dropdown-menu-secao:active,
+  .btn-dropdown-menu-secao:focus, .btn-dropdown-menu-secao:visited{
+  border-color: #a07945 !important;
+  background-color: #a07945 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* === Button dropdown menu Categoria === */
+.btn-dropdown-menu-categoria{
+  border: 1px solid #fffffaff;
+  background-color: transparent;
+  font-size: 0.6em;
+  margin-bottom: 6px;
+  width: 56px;
+}
+
+.btn-dropdown-menu-categoria:hover, .btn-dropdown-menu-categoria:active,
+  .btn-dropdown-menu-categoria:focus, .btn-dropdown-menu-categoria:visited{
+  border-color: #a07945 !important;
+  background-color: #a07945 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* === Button dropdown menu Produto === */
+.btn-dropdown-menu-produto{
+  border: 1px solid rgba(51, 51, 51, 1);
+  background-color: transparent;
+  color: rgba(51, 51, 51, 1);
+  font-size: 0.7em;
+  width: 32px;
+  padding-left: 3px;
+}
+
+.btn-dropdown-menu-produto:hover, .btn-dropdown-menu-produto:active,
+  .btn-dropdown-menu-produto:focus, .btn-dropdown-menu-produto:visited{
+  border-color: #a07945 !important;
+  background-color: #a07945 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* === Expand/Collapse All Button === */
 #btn-expand-all {
   display: block;
   position: fixed;
@@ -162,7 +213,6 @@ body {
 
 #btn-expand-all:hover {
   background-color: #7c4a24;
-  /* color: #a07945; */
 }
 
 #btn-collapse-all {
@@ -184,5 +234,10 @@ body {
 
 #btn-collapse-all:hover {
   background-color: #7c4a24;
-  /* color: #a07945; */
+}
+
+/* === QR Code === */
+.main-qr-code-div{
+  background-color: #fffffaff;
+  padding: 30px 30px 30px 30px;
 }

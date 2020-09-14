@@ -24,8 +24,7 @@ class ProdutoController extends Controller
     {
       $request->validate([
           'nome' => 'required',
-          'descricao_resumida' => 'required',
-          'descricao_completa' => 'required',
+          'descricao' => 'required',
           'preco' => 'required',
           'foto_url'
       ]);

@@ -24,15 +24,13 @@ class CategoriaController extends Controller
   {
     $request->validate([
         'nome' => 'required',
-        'descricao_resumida' => 'required',
-        'descricao_completa' => 'required',
-        'foto_url'
+        'secao_id' => 'required',
     ]);
 
     Categoria::create($request->all());
 
-    return redirect()->route('categorias.index')
-                    ->with('success','QR Code gerado com sucesso.');
+    return redirect()->route('admin')
+                     ->with('success','Categoria gerada com sucesso.');
   }
 
   public function show(Categoria $categoria)
@@ -48,23 +46,22 @@ class CategoriaController extends Controller
   public function update(Request $request, Categoria $categoria)
   {
     $request->validate([
-        'nome' => 'required',
-        'descricao_resumida' => 'required',
-        'descricao_completa' => 'required',
-        'foto_url'
+      'nome' => 'required',
+      'secao_id' => 'required',
     ]);
 
     $categoria->update($request->all());
 
-    return redirect()->route('categorias.index')
-                    ->with('success','Categoria atualizado com sucesso.');
+    return redirect()->route('admin')
+                     ->with('success','Categoria atualizada com sucesso.');
+
   }
 
   public function destroy(Categoria $categoria)
   {
     $categoria->delete();
 
-    return redirect()->route('categorias.index')
-                    ->with('success','Categoria deletado com sucesso.');
+    return redirect()->route('admin')
+                     ->with('success','Categoria atualizada com sucesso.');
   }
 }
