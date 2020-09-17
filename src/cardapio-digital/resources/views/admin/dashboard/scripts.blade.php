@@ -159,50 +159,87 @@
 </script>
 
 <script>
-  $(document).on("click", ".edit-secao-link", function () {
-     var secaoId = $(this).data('id');
-     var action = $("#edit-secao-form").attr('action');
-     var newAction = action.replace("||z||", secaoId);
+  $(document).on("click", ".add-secao-link", function () {
+    document.getElementById("add-secao-form").reset();
+  });
 
-     $("#edit-secao-form").attr('action', newAction);
+
+  $(document).on("click", ".edit-secao-link", function () {
+    document.getElementById("edit-secao-form").reset();
+
+    var secaoId = $(this).data('secao_id');
+
+    $("#edit-secao-form").attr('action', "{{ route('secaos.update', '||z||') }}");
+
+    var action = $("#edit-secao-form").attr('action');
+    var newAction = action.replace("||z||", secaoId);
+
+    $("#edit-secao-form").attr('action', newAction);
   });
 
   $(document).on("click", ".delete-secao-link", function () {
-     var secaoId = $(this).data('id');
-     var action = $("#delete-secao-form").attr('action');
-     var newAction = action.replace("||z||", secaoId);
+    var secaoId = $(this).data('secao_id');
 
-     $("#delete-secao-form").attr('action', newAction);
+    $("#delete-secao-form").attr('action', "{{ route('secaos.destroy', '||z||') }}");
+
+    var action = $("#delete-secao-form").attr('action');
+    var newAction = action.replace("||z||", secaoId);
+
+    $("#delete-secao-form").attr('action', newAction);
   });
 
   $(document).on("click", ".add-categoria-link", function () {
-     var secaoId = $(this).data('id');
-     var value = $("#add-categoria-input-secao-id").attr('value');
-     var newValue = value.replace("||z||", secaoId);
+    document.getElementById("add-categoria-form").reset();
 
-     $("#add-categoria-input-secao-id").attr('value', newValue);
+    var secaoId = $(this).data('secao_id');
+
+    $("#add-categoria-form").attr('value', "{{ route('categorias.store', '||z||') }}");
+
+    var value = $("#add-categoria-input-secao-id").attr('value');
+    var newValue = value.replace("||z||", secaoId);
+
+    $("#add-categoria-input-secao-id").attr('value', newValue);
   });
 
   $(document).on("click", ".edit-categoria-link", function () {
-     var categoriaId = $(this).data('categoria_id');
-     var secaoId = $(this).data('secao_id');
-     // var optionSelected = $("#edit-categoria-form-option").attr('selected');
-     // var newOptionSelected = optionSelected.replace("||z||", secaoId);
-     var action = $("#edit-categoria-form").attr('action');
-     var newAction = action.replace("||z||", categoriaId);
+    document.getElementById("edit-categoria-form").reset();
 
-     $("#edit-categoria-form-select").val(secaoId);
-     // $("#edit-categoria-form-option").attr('selected', newOptionSelected);
-     $("#edit-categoria-form").attr('action', newAction);
+    var categoriaId = $(this).data('categoria_id');
+    var secaoId = $(this).data('secao_id');
+
+    $("#edit-categoria-form").attr('action', "{{ route('categorias.edit', '||z||') }}");
+
+    var action = $("#edit-categoria-form").attr('action');
+    var newAction = action.replace("||z||", categoriaId);
+
+    $("#edit-categoria-form-select").val(secaoId);
+    $("#edit-categoria-form").attr('action', newAction);
 
   });
 
   $(document).on("click", ".delete-categoria-link", function () {
-     var categoriaId = $(this).data('categoria_id');
-     var action = $("#delete-categoria-form").attr('action');
-     var newAction = action.replace("||z||", categoriaId);
+   var categoriaId = $(this).data('categoria_id');
 
-     $("#delete-categoria-form").attr('action', newAction);
+   $("#delete-categoria-form").attr('action', "{{ route('categorias.destroy', '||z||') }}");
+
+   var action = $("#delete-categoria-form").attr('action');
+   var newAction = action.replace("||z||", categoriaId);
+
+   $("#delete-categoria-form").attr('action', newAction);
+  });
+
+  $(document).on("click", ".add-produto-link", function () {
+    document.getElementById("add-produto-form").reset();
+    removeAllPrecos();
+
+    var categoriaId = $(this).data('categoria_id');
+
+    $("#add-produto-form").attr('value', "{{ route('produtos.store', '||z||') }}");
+
+    var value = $("#add-produto-input-categoria-id").attr('value');
+    var newValue = value.replace("||z||", categoriaId);
+
+    $("#add-produto-input-categoria-id").attr('value', categoriaId);
   });
 
 </script>
@@ -242,28 +279,67 @@
 
 <script>
     function addPreco() {
-        document.getElementById("add_to_me").innerHTML +=
-          "<h3>This is the text which has been inserted by JS</h3>";
+      var precosCount = document.getElementsByClassName("precos-sub-wrapper").length;
+
+      if (precosCount >= 3) {
+        return alert("A quantidade de preços por produto não pode ser maior de 3.");
+      }
+
+      var precoId = precosCount + 1;
+
+      var htmlCode = `<div class="row align-items-center precos-sub-wrapper">
+                      <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                        <div class="form-group">
+                          <input type="text" name="legenda` + precoId + `" class="form-control" placeholder="Legenda">
+                        </div>
+                      </div>
+                      <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                          <input type="text" name="valor` + precoId + `" class="form-control" placeholder="Valor">
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                        <div class="form-group">
+                          <button class="btn btn-primary btn-sm" type="button" name="button" onclick="addPreco()">
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                        <div class="form-group">
+                          <button class="btn btn-danger btn-sm" type="button" name="button" onclick="removePreco()">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>`;
+
+      document.getElementById("precos-wrapper-id").innerHTML += htmlCode;
     }
-</script>
 
-<script>
-    function submitProdutoForm() {
-      // var data = $("$update-form").serialize();
-      var data = $("#add-produto-form").serializeArray();
+    function removePreco() {
+      var precosSubWrappers = document.getElementsByClassName("precos-sub-wrapper");
+      var precosSubWrappersCount = precosSubWrappers.length;
 
-      console.log(data);
+      if (precosSubWrappersCount <= 1) {
+        return;
+      }
 
-      // var dataProduto =
-      // var dataPreco
-      //
-      // $.ajax({
-      //     type : 'POST',
-      //     url  : "{{ route('produtos.store') }}",
-      //     data : data,
-      //     success :  function(data){
-      //         $(".display").html(data);
-      //     }
-      // });
+      var precosWrapper = document.getElementById("precos-wrapper-id");
+
+      precosWrapper.removeChild(precosSubWrappers[precosSubWrappersCount - 1]);
     }
+
+    function removeAllPrecos() {
+      var precosWrapper = document.getElementById("precos-wrapper-id");
+      var precosSubWrappers = document.getElementsByClassName("precos-sub-wrapper");
+      var precosSubWrappersCount = precosSubWrappers.length;
+
+      while (precosSubWrappersCount > 1) {
+        precosWrapper.removeChild(precosSubWrappers[precosSubWrappersCount - 1]);
+        precosSubWrappers = document.getElementsByClassName("precos-sub-wrapper");
+        precosSubWrappersCount = precosSubWrappers.length;
+      }
+    }
+
 </script>

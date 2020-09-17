@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\Preco;
 
 class ProdutoController extends Controller
 {
@@ -25,13 +26,55 @@ class ProdutoController extends Controller
       $request->validate([
           'nome' => 'required',
           'descricao' => 'required',
-          'preco' => 'required',
-          'foto_url'
+          'categoria_id' => 'required',
+          'legenda1' => 'required',
+          'valor1' => 'required',
       ]);
 
-      Produto::create($request->all());
+      if ($request->has('legenda2')) {
+        $request->validate([
+            'legenda2' => 'required',
+            'valor2' => 'required',
+        ]);
+      }
 
-      return redirect()->route('main');
+      if ($request->has('legenda3')) {
+        $request->validate([
+            'legenda3' => 'required',
+            'valor3' => 'required',
+        ]);
+      }
+
+      $produto = Produto::create([
+        'nome' => $request->nome,
+        'descricao' => $request->descricao,
+        'categoria_id' => $request->categoria_id,
+      ]);
+
+      Preco::create([
+        'legenda' => $request->legenda1,
+        'valor' => $request->valor1,
+        'produto_id' => $produto->id,
+      ]);
+
+      if ($request->has('legenda2')) {
+        Preco::create([
+          'legenda' => $request->legenda2,
+          'valor' => $request->valor2,
+          'produto_id' => $produto->id,
+        ]);
+      }
+
+      if ($request->has('legenda3')) {
+        Preco::create([
+          'legenda' => $request->legenda3,
+          'valor' => $request->valor3,
+          'produto_id' => $produto->id,
+        ]);
+      }
+
+      return redirect()->route('admin')
+                       ->with('success','Produto gerado com sucesso.');
     }
 
     public function show(Produto $produto)

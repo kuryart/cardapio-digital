@@ -39,6 +39,14 @@ Route::get('/produtos/{produto}','ProdutoController@show')->name('produtos.show'
 Route::get('/produtos/{produto}/edit','ProdutoController@edit')->name('produtos.edit');
 Route::put('/produtos/{produto}','ProdutoController@update')->name('produtos.update');
 Route::delete('/produtos/{produto}','ProdutoController@destroy')->name('produtos.destroy');
+// === Preços ===
+Route::get('/precos','PrecoController@index')->name('precos.index');
+Route::get('/precos/create','PrecoController@create')->name('precos.create');
+Route::post('/precos','PrecoController@store')->name('precos.store');
+Route::get('/precos/{preco}','PrecoController@show')->name('precos.show');
+Route::get('/precos/{preco}/edit','PrecoController@edit')->name('precos.edit');
+Route::put('/precos/{preco}','PrecoController@update')->name('precos.update');
+Route::delete('/precos/{preco}','PrecoController@destroy')->name('precos.destroy');
 // === Categorias ===
 Route::get('/categorias','CategoriaController@index')->name('categorias.index');
 Route::get('/categorias/create','CategoriaController@create')->name('categorias.create');
@@ -64,3 +72,4 @@ Route::post('/admin/login/do', 'AuthController@login')->name('admin.login.do');
 // === TESTS ===
 Route::get('/import-test', 'SecaoController@testPage')->name('testPage');
 Route::get('/import-test/import', 'SecaoController@import')->name('importTest');
+Route::get('/general-tests', 'TestController@test')->name('generalTests');

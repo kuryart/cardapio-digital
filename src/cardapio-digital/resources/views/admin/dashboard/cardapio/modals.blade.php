@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body">
         <!-- Form -->
-        <form action="{{ route('secaos.store') }}" method="POST">
+        <form id="add-secao-form" action="{{ route('secaos.store') }}" method="POST">
           @csrf
 
            <div class="row">
@@ -111,7 +111,7 @@
       </div>
       <div class="modal-body">
         <!-- Form -->
-        <form action="{{ route('categorias.store') }}" method="POST">
+        <form id="add-categoria-form" action="{{ route('categorias.store') }}" method="POST">
           @csrf
 
            <div class="row">
@@ -228,25 +228,86 @@
         <!-- Form -->
         <form id="add-produto-form" action="{{ route('produtos.store') }}" method="POST">
           @csrf
-           <div><input type="text" name="a" value="1" id="a"></div>
-
-           
-           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-              <div class="form-group">
-                <strong>Nome:</strong>
-                <input type="text" name="nome" class="form-control" placeholder="Nome">
+          <div class="container">
+            <!-- Parte 1 -->
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                  <strong>Nome:</strong>
+                  <input type="text" name="nome" class="form-control" placeholder="Nome">
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                  <strong>Descrição:</strong>
+                  <textarea class="form-control" name="descricao" rows="3" placeholder="Descrição do produto"></textarea>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                  <strong>Preços:</strong>
+                </div>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 hide">
-              <div class="form-group">
-                <input class="form-control" id="add-produto-input-secao-id" value="||z||" type="text" name="categoria_id">
+            <!-- Parte 2 -->
+            <div class="row">
+              <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                <div class="form-group">
+                  <strong>Legenda:</strong>
+                </div>
+              </div>
+              <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                  <strong>Valor:</strong>
+                </div>
+              </div>
+              <div class="col-2 col-sm-2 col-md-2 col-lg-2">
               </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <!-- <button type="submit" class="btn btn-primary">Salvar</button> -->
-              <button class="btn btn-primary" type="button" onclick="submitProdutoForm()">Salvar</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+            <!-- Parte 3 -->
+            <div class="row hide">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                  <input id="add-produto-input-categoria-id" type="text" name="categoria_id" class="form-control" value="||z||">
+                </div>
+              </div>
+            </div>
+            <!-- Parte 4 -->
+            <div id="precos-wrapper-id">
+              <div class="row align-items-center precos-sub-wrapper">
+                <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                  <div class="form-group">
+                    <input type="text" name="legenda1" class="form-control" placeholder="Legenda">
+                  </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                  <div class="form-group">
+                    <input type="text" name="valor1" class="form-control" placeholder="Valor">
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-sm" type="button" name="button" onclick="addPreco()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                  <div class="form-group">
+                    <button class="btn btn-danger btn-sm" type="button" name="button" onclick="removePreco()">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Parte 5 -->
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <!-- <button class="btn btn-primary" type="button" onclick="submitProdutoForm()">Salvar</button> -->
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+              </div>
             </div>
           </div>
         </form>

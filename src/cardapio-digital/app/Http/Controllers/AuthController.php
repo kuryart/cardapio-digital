@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Secao;
 use App\Models\Categoria;
 use App\Models\Produto;
+use App\Models\Preco;
 use App\Models\QrCode;
 
 class AuthController extends Controller
@@ -18,7 +19,36 @@ class AuthController extends Controller
         $secaos = Secao::all();
         $categorias = Categoria::all();
         $produtos = Produto::all();
+        $precos = Preco::all();
         $qrCodes = QrCode::all();
+
+        // === PRODUTOS PREÇOS - BEGIN ===
+        $produtosFinal = [];
+
+        foreach ($produtos as $produto) {
+          $produtoTemp = $produto;
+          $precosTemp = [];
+          $precoTemp = [];
+
+          foreach ($precos as $k => $preco) {
+            if (count($precosTemp) >= 3) {
+              break;
+            }
+
+            if ($preco->produto_id === $produto->id) {
+              $precoTemp["legenda"] = $preco->legenda;
+              $precoTemp["valor"] = $preco->valor;
+              $precosTemp[] = $precoTemp;
+              unset($precos[$k]);
+            }
+          }
+
+          $produtoTemp["precos"] = $precosTemp;
+          $produtosFinal[] = $produtoTemp;
+        }
+
+        $produtos = $produtosFinal;
+        // === PRODUTOS PREÇOS - END ===
 
         // return view('admin.dashboard')->with('viewId',$viewId);
         return view('admin.dashboard.dashboard')->with(compact('secaos', 'categorias', 'produtos', 'qrCodes', 'viewId'));

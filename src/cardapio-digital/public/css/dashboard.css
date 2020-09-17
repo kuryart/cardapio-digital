@@ -120,27 +120,6 @@ body {
   background-color: #fffffaff;
 }
 
-/* === Produto === */
-.produto-title {
-  font-weight: bold;
-}
-
-.produto-price {
-  width: 60px;
-  background-color: #333333;
-  color: #e4e4e4;
-  text-align: center;
-}
-
-.produto-container::after{
-  content: ""; /* This is necessary for the pseudo element to work. */
-  display: block; /* This will put the pseudo element on its own line. */
-  width: 100%; /* Change this to whatever width you want. */
-  padding-top: 3px; /* This creates some space between the element and the border. */
-  margin-bottom: 12px;
-  border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
-}
-
 /* === Button dropdown menu Secao === */
 .btn-dropdown-menu-secao{
   border: 1px solid #fffffaff;
@@ -240,4 +219,73 @@ body {
 .main-qr-code-div{
   background-color: #fffffaff;
   padding: 30px 30px 30px 30px;
+}
+
+/* === Produto === */
+.produto-main-wrapper{
+  /* background-color: #1F5673; */
+}
+.produto-detalhes{
+  /* background-color: #276C91; */
+}
+.produto-header{
+  /* background-color: #2B78A1; */
+}
+.produto-title-wrapper{
+  /* background-color: #2F84B1; */
+}
+
+.produto-menu-wrapper{
+
+}
+.produto-menu{
+
+}
+.produto-body{
+
+}
+.produto-descricao-wrapper{
+
+}
+.produto-descricao{
+
+}
+.produto-precos{
+  /* background-color: #58568A; */
+}
+.produto-precos-legendas{
+  /* background-color: #605E97; */
+}
+.produto-preco-legenda-wrapper{
+  /* background-color: #6A68A1; */
+}
+.produto-preco-legenda{
+  font-weight: bold;
+}
+.produto-preco-valor-wrapper{
+
+}
+.produto-preco-valor{
+
+}
+
+.produto-title {
+  font-weight: bold;
+}
+
+.produto-preco-valor {
+  /* width: 60px; */
+  padding: 4px;
+  background-color: #333333;
+  color: #e4e4e4;
+  text-align: center;
+}
+
+.produto-container::after{
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  width: 100%; /* Change this to whatever width you want. */
+  padding-top: 3px; /* This creates some space between the element and the border. */
+  margin-bottom: 12px;
+  border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
 }
