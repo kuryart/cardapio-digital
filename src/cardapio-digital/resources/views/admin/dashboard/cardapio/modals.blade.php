@@ -184,7 +184,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="delete-categoria-modal-label">Excluir Seção</h5>
+        <h5 class="modal-title" id="delete-categoria-modal-label">Excluir Categoria</h5>
         <button type="button" class="close" data-dismiss="modal">
           <span>&times;</span>
         </button>
@@ -195,7 +195,7 @@
            <h4><strong>Atenção!</strong></h4>
          </div>
          <div class="col-xs-12 col-sm-12 col-md-12">
-           <p>Esta ação irá excluir a seção e suas respectivas categorias e produtos. Deseja continuar?</p>
+           <p>Esta ação irá excluir a categoria e seus respectivos produtos. Deseja continuar?</p>
          </div>
         <!-- Form -->
         <form id="delete-categoria-form" action="{{ route('categorias.destroy', '||z||') }}" method="POST">
@@ -213,7 +213,7 @@
   </div>
 </div>
 
-<!-- === Categoria === -->
+<!-- === Produto === -->
 <!-- Add Produto Modal -->
 <div class="modal fade" id="add-produto-modal" tabindex="-1">
   <div class="modal-dialog">
@@ -273,8 +273,8 @@
               </div>
             </div>
             <!-- Parte 4 -->
-            <div id="precos-wrapper-id">
-              <div class="row align-items-center precos-sub-wrapper">
+            <div id="add-produto-form-precos-wrapper-id">
+              <div class="row align-items-center add-produto-form-precos-sub-wrapper">
                 <div class="col-7 col-sm-7 col-md-7 col-lg-7">
                   <div class="form-group">
                     <input type="text" name="legenda1" class="form-control" placeholder="Legenda">
@@ -308,6 +308,126 @@
                 <!-- <button class="btn btn-primary" type="button" onclick="submitProdutoForm()">Salvar</button> -->
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
               </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Edit Produto Modal -->
+<div class="modal fade" id="edit-produto-modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="edit-produto-modal-label">Editar Produto</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Form -->
+        <form id="edit-produto-form" action="{{ route('produtos.update', '||z||') }}" method="POST">
+          @csrf
+          @method('PUT')
+
+          <div class="container">
+            <div class="row">
+
+             <div class="col-xs-12 col-sm-12 col-md-12">
+               <div class="form-group">
+                 <strong>Nome:</strong>
+                 <input id="edit-produto-form-input-nome" type="text" name="nome" class="form-control" placeholder="Nome">
+               </div>
+             </div>
+
+             <div class="col-xs-12 col-sm-12 col-md-12">
+               <div class="form-group">
+                 <strong>Descrição:</strong>
+                 <textarea id="edit-produto-form-textarea-descricao" class="form-control" name="descricao" rows="3" placeholder="Descrição do produto"></textarea>
+               </div>
+             </div>
+
+             <div class="col-xs-12 col-sm-12 col-md-12">
+                 <div class="form-group">
+                     <strong>Categoria:</strong>
+                     <select id="edit-produto-form-select" name="categoria_id" class="form-control">
+                       @foreach ($categorias as $categoria)
+                         <option value="{{ $categoria->id }}" selected="||z||">{{ $categoria->nome }}</option>
+                       @endforeach
+                     </select>
+                 </div>
+             </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                  <strong>Preços:</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                <div class="form-group">
+                  <strong>Legenda:</strong>
+                </div>
+              </div>
+              <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                  <strong>Valor:</strong>
+                </div>
+              </div>
+              <div class="col-2 col-sm-2 col-md-2 col-lg-2">
+              </div>
+            </div>
+
+            <!-- === PREÇOS - BEGIN === -->
+            <div id="edit-produto-form-precos-wrapper-id">
+            </div>
+            <!-- === PREÇOS - END === -->
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Delete Categoria Modal -->
+<div class="modal fade" id="delete-produto-modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete-produto-modal-label">Excluir Produto</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+         <div class="col-xs-12 col-sm-12 col-md-12">
+           <h4><strong>Atenção!</strong></h4>
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-12">
+           <p>Esta ação irá excluir o produto. Deseja continuar?</p>
+         </div>
+        <!-- Form -->
+        <form id="delete-produto-form" action="{{ route('produtos.destroy', '||z||') }}" method="POST">
+          @csrf
+          @method('DELETE')
+
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">Excluir</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
             </div>
           </div>
         </form>

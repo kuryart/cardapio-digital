@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Preco;
 
@@ -22,15 +23,20 @@ class PrecoController extends Controller
 
   public function store(Request $request)
   {
-    $request->validate([
-        'legenda' => 'required',
-        'valor' => 'required',
-        'produto_id' => 'required'
-    ]);
+    if (Auth::check() === true)
+    {
+      $request->validate([
+          'legenda' => 'required',
+          'valor' => 'required',
+          'produto_id' => 'required'
+      ]);
 
-    Preco::create($request->all());
+      Preco::create($request->all());
 
-    return redirect()->route('main');
+      return redirect()->route('main');
+    }
+
+    return redirect()->route('admin.login');
   }
 
   // public function show(Preco $preco)
@@ -40,28 +46,43 @@ class PrecoController extends Controller
 
   public function edit(Preco $preco)
   {
+    if (Auth::check() === true)
+    {
       return view('precos.edit',compact('preco'));
+    }
+
+    return redirect()->route('admin.login');
   }
 
   public function update(Request $request, Preco $preco)
   {
-    $request->validate([
-      'legenda' => 'required',
-      'valor' => 'required',
-      'produto_id' => 'required'
-    ]);
+    if (Auth::check() === true)
+    {
+      $request->validate([
+        'legenda' => 'required',
+        'valor' => 'required',
+        'produto_id' => 'required'
+      ]);
 
-    $preco->update($request->all());
+      $preco->update($request->all());
 
-    return redirect()->route('precos.index')
-                     ->with('success','Preco atualizado com sucesso.');
+      return redirect()->route('precos.index')
+                       ->with('success','Preco atualizado com sucesso.');
+    }
+
+    return redirect()->route('admin.login');
   }
 
   public function destroy(Preco $preco)
   {
-    $preco->delete();
+    if (Auth::check() === true)
+    {
+      $preco->delete();
 
-    return redirect()->route('produtos.index')
-                     ->with('success','Produto deletado com sucesso.');
+      return redirect()->route('produtos.index')
+                       ->with('success','Produto deletado com sucesso.');
+    }
+    
+    return redirect()->route('admin.login');
   }
 }

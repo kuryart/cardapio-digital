@@ -28,6 +28,11 @@ body {
   background: #555;
 }
 
+/* === Hide === */
+.hide {
+  display:none;
+}
+
 /* === Navbar === */
 .navbar{
   background-color: #080705ff;
@@ -36,6 +41,10 @@ body {
 
 .nav-link{
   color: #fffffaff;
+}
+
+.fa-book-open{
+  color: #a07945;
 }
 
 .nav-link:not(.nav-search):hover{
@@ -80,6 +89,10 @@ body {
   color: #a07945;
 }
 
+.secao-container{
+  margin-left: -10px;
+}
+
 /* === Categoria === */
 .categoria-wrapper{
   margin-bottom: 10px;
@@ -99,25 +112,12 @@ body {
   color: #a07945;
 }
 
-/* === Produto === */
-.produto-title {
-  font-weight: bold;
+.categoria-container{
+  margin-left: -10px;
 }
 
-.produto-price {
-  width: 60px;
-  background-color: #333333;
-  color: #e4e4e4;
-  text-align: center;
-}
-
-.produto-container::after{
-  content: ""; /* This is necessary for the pseudo element to work. */
-  display: block; /* This will put the pseudo element on its own line. */
-  width: 100%; /* Change this to whatever width you want. */
-  padding-top: 3px; /* This creates some space between the element and the border. */
-  margin-bottom: 12px;
-  border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
+.categoria-card-body{
+  background-color: #fffffaff;
 }
 
 /* === Expand/Collapse All Button === */
@@ -140,7 +140,6 @@ body {
 
 #btn-expand-all:hover {
   background-color: #7c4a24;
-  /* color: #a07945; */
 }
 
 #btn-collapse-all {
@@ -162,5 +161,118 @@ body {
 
 #btn-collapse-all:hover {
   background-color: #7c4a24;
-  /* color: #a07945; */
+}
+
+/* === Produto === */
+.produto-main-wrapper{
+  /* background-color: #1F5673; */
+}
+.produto-detalhes{
+  /* background-color: #276C91; */
+}
+.produto-header{
+  /* background-color: #2B78A1; */
+}
+.produto-title-wrapper{
+  /* background-color: #2F84B1; */
+}
+
+.produto-menu-wrapper{
+
+}
+.produto-menu{
+
+}
+.produto-body{
+
+}
+.produto-descricao-wrapper{
+
+}
+.produto-descricao{
+
+}
+.produto-precos{
+  /* background-color: #58568A; */
+  text-align: center;
+}
+.produto-precos-legendas{
+  /* background-color: #605E97; */
+}
+.produto-preco-legenda-wrapper{
+  /* background-color: #6A68A1; */
+}
+.produto-preco-legenda{
+  font-weight: bold;
+}
+.produto-preco-valor-wrapper{
+
+}
+.produto-preco-valor{
+
+}
+
+.produto-title {
+  font-weight: bold;
+}
+
+.produto-preco-valor {
+  /* width: 60px; */
+  padding: 4px;
+  background-color: #333333;
+  color: #e4e4e4;
+  text-align: center;
+}
+
+.produto-container::after{
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  width: 100%; /* Change this to whatever width you want. */
+  padding-top: 3px; /* This creates some space between the element and the border. */
+  margin-bottom: 12px;
+  border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
+}
+
+@media (max-width: 575px) {
+  .produto-precos {
+    margin-top: 20px;
+  }
+
+  /* .produto-title-wrapper{
+    text-align: center;
+  }
+
+  .produto-menu-wrapper{
+    text-align: center;
+  }
+
+  .produto-descricao-wrapper{
+    text-align: center;
+  } */
+}
+
+@media (max-width: 767px) {
+  .produto-precos {
+    margin-top: 20px;
+  }
+
+  /* .produto-title-wrapper{
+    text-align: center;
+  }
+
+  .produto-menu-wrapper{
+    text-align: center;
+  }
+
+  .produto-descricao-wrapper{
+    text-align: center;
+  } */
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 1199px) {
+
 }

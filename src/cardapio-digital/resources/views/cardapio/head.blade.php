@@ -3,8 +3,6 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Cardápio Digital</title>
 <!-- === Font Awesome === -->
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
-<!-- <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles --> -->
 <link href="{{ asset('css/all.css') }}" rel="stylesheet" />
 <!-- === Bootstrap === -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

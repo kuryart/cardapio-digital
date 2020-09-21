@@ -3,7 +3,7 @@
 @section('content')
   <div class="wrapper">
 
-    <div class="cardapio hide">
+    <div class="cardapio">
       @include('admin.dashboard.cardapio.cardapio')
     </div>
 

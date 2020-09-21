@@ -1,14 +1,12 @@
 <script>
-  var viewId = <?php echo $viewId ?>;
+  var viewId = {{ $viewId }};
 
-  console.log(viewId);
-
-  if (viewId === 2) {
+  if (viewId === 1) {
     $('.qrcode').addClass('hide');
-  } else if (viewId = 1) {
+    $('.cardapio').removeClass('hide');
+  } else if (viewId === 2) {
+    $('.cardapio').addClass('hide');
     $('.qrcode').removeClass('hide');
-  } else {
-
   };
 
   $(function(){
@@ -20,8 +18,9 @@
     $('#cardapio').click(function(){
       $('.qrcode').addClass('hide');
       $('.cardapio').removeClass('hide');
+      window.scrollTo(0, 0);
     });
-  })
+  });
 </script>
 
 <!-- <script>
@@ -95,7 +94,7 @@
         for (k = 0; k < produtoContainer.length; k++)
         {
           produtoTitle = produtoContainer[k].getElementsByClassName("produto-title");
-          produtoDescription = produtoContainer[k].getElementsByClassName("produto-description");
+          produtoDescription = produtoContainer[k].getElementsByClassName("produto-descricao");
           txtValueTitle = produtoTitle[0].innerHTML;
           txtValueDescription = produtoDescription[0].innerHTML;
 
@@ -214,7 +213,6 @@
 
     $("#edit-categoria-form-select").val(secaoId);
     $("#edit-categoria-form").attr('action', newAction);
-
   });
 
   $(document).on("click", ".delete-categoria-link", function () {
@@ -240,6 +238,69 @@
     var newValue = value.replace("||z||", categoriaId);
 
     $("#add-produto-input-categoria-id").attr('value', categoriaId);
+  });
+
+  $(document).on("click", ".edit-produto-link", function () {
+    document.getElementById("edit-produto-form").reset();
+
+    var produtoId = $(this).data('produto_id');
+    var categoriaId = $(this).data('categoria_id');
+
+    $("#edit-produto-form").attr('action', "{{ route('produtos.edit', '||z||') }}");
+
+    var action = $("#edit-produto-form").attr('action');
+    var newAction = action.replace("||z||", produtoId);
+
+    $("#edit-produto-form-select").val(categoriaId);
+    $("#edit-produto-form").attr('action', newAction);
+
+    var produtos = @json($produtos);
+    var produto = produtos.find( ({ id }) => id === produtoId );
+    var precos = produto.precos;
+
+    $('.edit-produto-form-precos-sub-wrapper').remove();
+
+    for (var i = 0; i < precos.length; i++) {
+      var htmlCode = `<div class="row align-items-center edit-produto-form-precos-sub-wrapper">
+                        <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                          <div class="form-group">
+                            <input type="text" name="legenda` + (i + 1) + `" class="form-control" placeholder="Legenda" value="` + precos[i].legenda + `">
+                          </div>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                          <div class="form-group">
+                            <input type="text" name="valor` + (i + 1) + `" class="form-control" placeholder="Valor" value="` + precos[i].valor + `">
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                          <div class="form-group">
+                            <button class="btn btn-primary btn-sm" type="button" name="button" onclick="addPreco2()">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                          <div class="form-group">
+                            <button class="btn btn-danger btn-sm" type="button" name="button" onclick="removePreco2()">
+                              <i class="fas fa-minus"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>`;
+
+      document.getElementById("edit-produto-form-precos-wrapper-id").innerHTML += htmlCode;
+    }
+  });
+
+  $(document).on("click", ".delete-produto-link", function () {
+   var produtoId = $(this).data('produto_id');
+
+   $("#delete-produto-form").attr('action', "{{ route('produtos.destroy', '||z||') }}");
+
+   var action = $("#delete-produto-form").attr('action');
+   var newAction = action.replace("||z||", produtoId);
+
+   $("#delete-produto-form").attr('action', newAction);
   });
 
 </script>
@@ -279,7 +340,7 @@
 
 <script>
     function addPreco() {
-      var precosCount = document.getElementsByClassName("precos-sub-wrapper").length;
+      var precosCount = document.getElementsByClassName("add-produto-form-precos-sub-wrapper").length;
 
       if (precosCount >= 3) {
         return alert("A quantidade de preços por produto não pode ser maior de 3.");
@@ -287,59 +348,130 @@
 
       var precoId = precosCount + 1;
 
-      var htmlCode = `<div class="row align-items-center precos-sub-wrapper">
-                      <div class="col-7 col-sm-7 col-md-7 col-lg-7">
-                        <div class="form-group">
-                          <input type="text" name="legenda` + precoId + `" class="form-control" placeholder="Legenda">
+      var htmlCode = `<div class="row align-items-center add-produto-form-precos-sub-wrapper">
+                        <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                          <div class="form-group">
+                            <input type="text" name="legenda` + precoId + `" class="form-control" placeholder="Legenda">
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-                        <div class="form-group">
-                          <input type="text" name="valor` + precoId + `" class="form-control" placeholder="Valor">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                          <div class="form-group">
+                            <input type="text" name="valor` + precoId + `" class="form-control" placeholder="Valor">
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-1 col-sm-1 col-md-1 col-lg-1">
-                        <div class="form-group">
-                          <button class="btn btn-primary btn-sm" type="button" name="button" onclick="addPreco()">
-                            <i class="fas fa-plus"></i>
-                          </button>
+                        <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                          <div class="form-group">
+                            <button class="btn btn-primary btn-sm" type="button" name="button" onclick="addPreco()">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-1 col-sm-1 col-md-1 col-lg-1">
-                        <div class="form-group">
-                          <button class="btn btn-danger btn-sm" type="button" name="button" onclick="removePreco()">
-                            <i class="fas fa-minus"></i>
-                          </button>
+                        <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                          <div class="form-group">
+                            <button class="btn btn-danger btn-sm" type="button" name="button" onclick="removePreco()">
+                              <i class="fas fa-minus"></i>
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    </div>`;
+                      </div>`;
 
-      document.getElementById("precos-wrapper-id").innerHTML += htmlCode;
+      document.getElementById("add-produto-form-precos-wrapper-id").innerHTML += htmlCode;
     }
 
     function removePreco() {
-      var precosSubWrappers = document.getElementsByClassName("precos-sub-wrapper");
+      var precosSubWrappers = document.getElementsByClassName("add-produto-form-precos-sub-wrapper");
       var precosSubWrappersCount = precosSubWrappers.length;
 
       if (precosSubWrappersCount <= 1) {
         return;
       }
 
-      var precosWrapper = document.getElementById("precos-wrapper-id");
+      var precosWrapper = document.getElementById("add-produto-form-precos-wrapper-id");
 
       precosWrapper.removeChild(precosSubWrappers[precosSubWrappersCount - 1]);
     }
 
     function removeAllPrecos() {
-      var precosWrapper = document.getElementById("precos-wrapper-id");
-      var precosSubWrappers = document.getElementsByClassName("precos-sub-wrapper");
+      var precosWrapper = document.getElementById("add-produto-form-precos-wrapper-id");
+      var precosSubWrappers = document.getElementsByClassName("add-produto-form-precos-sub-wrapper");
       var precosSubWrappersCount = precosSubWrappers.length;
 
       while (precosSubWrappersCount > 1) {
         precosWrapper.removeChild(precosSubWrappers[precosSubWrappersCount - 1]);
-        precosSubWrappers = document.getElementsByClassName("precos-sub-wrapper");
+        precosSubWrappers = document.getElementsByClassName("add-produto-form-precos-sub-wrapper");
         precosSubWrappersCount = precosSubWrappers.length;
       }
     }
 
 </script>
+
+<script>
+    function addPreco2() {
+      var precosCount = document.getElementsByClassName("edit-produto-form-precos-sub-wrapper").length;
+
+      if (precosCount >= 3) {
+        return alert("A quantidade de preços por produto não pode ser maior de 3.");
+      }
+
+      var precoId = precosCount + 1;
+
+      var htmlCode = `<div class="row align-items-center edit-produto-form-precos-sub-wrapper">
+                        <div class="col-7 col-sm-7 col-md-7 col-lg-7">
+                          <div class="form-group">
+                            <input type="text" name="legenda` + precoId + `" class="form-control" placeholder="Legenda">
+                          </div>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                          <div class="form-group">
+                            <input type="text" name="valor` + precoId + `" class="form-control" placeholder="Valor">
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                          <div class="form-group">
+                            <button class="btn btn-primary btn-sm" type="button" name="button" onclick="addPreco2()">
+                              <i class="fas fa-plus"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                          <div class="form-group">
+                            <button class="btn btn-danger btn-sm" type="button" name="button" onclick="removePreco2()">
+                              <i class="fas fa-minus"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>`;
+
+      document.getElementById("edit-produto-form-precos-wrapper-id").innerHTML += htmlCode;
+    }
+
+    function removePreco2() {
+      var precosSubWrappers = document.getElementsByClassName("edit-produto-form-precos-sub-wrapper");
+      var precosSubWrappersCount = precosSubWrappers.length;
+
+      if (precosSubWrappersCount <= 1) {
+        return;
+      }
+
+      var precosWrapper = document.getElementById("edit-produto-form-precos-wrapper-id");
+
+      precosWrapper.removeChild(precosSubWrappers[precosSubWrappersCount - 1]);
+    }
+
+    function removeAllPrecos2() {
+      var precosWrapper = document.getElementById("edit-produto-form-precos-wrapper-id");
+      var precosSubWrappers = document.getElementsByClassName("edit-produto-form-precos-sub-wrapper");
+      var precosSubWrappersCount = precosSubWrappers.length;
+
+      while (precosSubWrappersCount > 1) {
+        precosWrapper.removeChild(precosSubWrappers[precosSubWrappersCount - 1]);
+        precosSubWrappers = document.getElementsByClassName("edit-produto-form-precos-sub-wrapper");
+        precosSubWrappersCount = precosSubWrappers.length;
+      }
+    }
+
+</script>
+
+<div id="app"></div>
+<script type="text/javascript" src="js/app.js"></script>
+{!! toastr()->render() !!}

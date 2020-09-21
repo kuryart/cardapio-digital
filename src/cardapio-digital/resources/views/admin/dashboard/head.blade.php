@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Passion+One&family=Tangerine:wght@700&family=Signika&display=swap" rel="stylesheet">
 <!-- === Stylesheets === -->
 <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
+<link rel="stylesheet" type="text/css" href="/css/app.css">
 <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" />
 <!-- <link href="{{ asset('css/dashboard_bkp.css') }}" rel="stylesheet" /> -->
 <!-- <link href="{{ asset('css/dashboard_bkp2.css') }}" rel="stylesheet" /> -->

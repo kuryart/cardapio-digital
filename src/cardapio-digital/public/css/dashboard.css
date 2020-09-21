@@ -252,6 +252,7 @@ body {
 }
 .produto-precos{
   /* background-color: #58568A; */
+  text-align: center;
 }
 .produto-precos-legendas{
   /* background-color: #605E97; */
@@ -288,4 +289,52 @@ body {
   padding-top: 3px; /* This creates some space between the element and the border. */
   margin-bottom: 12px;
   border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
+}
+
+@media (max-width: 575px) {
+  .produto-precos {
+    margin-top: 20px;
+  }
+
+  /* .produto-title-wrapper{
+    text-align: center;
+  }
+
+  .produto-menu-wrapper{
+    text-align: center;
+  }
+
+  .produto-descricao-wrapper{
+    text-align: center;
+  } */
+}
+
+@media (max-width: 767px) {
+  .produto-precos {
+    margin-top: 20px;
+  }
+
+  /* .produto-title-wrapper{
+    text-align: center;
+  }
+
+  .produto-menu-wrapper{
+    text-align: center;
+  }
+
+  .produto-descricao-wrapper{
+    text-align: center;
+  } */
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+#toast-container>div {
+opacity: 1;
 }

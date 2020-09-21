@@ -71,7 +71,7 @@
                         <!-- Produto - BEGIN -->
                         <div class="container-fluid produto-container">
                           <div class="row produto-main-wrapper">
-                            <div class="col produto-detalhes">
+                            <div class="col-12 col-sm-12 col-md	col-lg col-xl produto-detalhes">
                               <div class="row produto-header">
                                 <div class="col-auto produto-title-wrapper">
                                   <span class="produto-title">{{ $produto->nome }}</span>
@@ -81,11 +81,10 @@
                                     <div class="dropdown">
                                       <button class="btn btn-primary btn-sm py-0 dropdown-toggle btn-dropdown-menu-produto" type="button" id="produto-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-bars"></i>
-                                        <!-- <i class="fas fa-hamburger"></i> -->
                                       </button>
                                       <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
-                                        <a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
+                                        <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
+                                        <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
                                       </div>
                                     </div>
                                   </span>
@@ -97,34 +96,25 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-auto text-center produto-precos">
-                              <div class="row produto-precos-legendas">
-                                <div class="col produto-preco-legenda-wrapper">
-                                  <span class="produto-preco-legenda">{{ $produto->precos[0]['legenda'] }}</span>
-                                </div>
-                                <div class="col produto-preco-legenda-wrapper">
-                                  <span class="produto-preco-legenda">{{ $produto->precos[0]['legenda'] }}</span>
-                                </div>
-                                <div class="col produto-preco-legenda-wrapper">
-                                  <span class="produto-preco-legenda">{{ $produto->precos[0]['legenda'] }}</span>
-                                </div>
+                            <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto produto-precos">
+                              <div class="row produto-precos-legendas justify-content-center">
+                                @foreach ($produto->precos as $precos)
+                                  <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
+                                    <span class="produto-preco-legenda">{{ $precos['legenda'] }}</span>
+                                  </div>
+                                @endforeach
                               </div>
-                              <div class="row produto-precos-valores">
-                                <div class="col produto-preco-valor-wrapper">
-                                  <span class="produto-preco-valor">{{ $produto->precos[0]['valor'] }}</span>
-                                </div>
-                                <div class="col produto-preco-valor-wrapper">
-                                  <span class="produto-preco-valor">{{ $produto->precos[0]['valor'] }}</span>
-                                </div>
-                                <div class="col produto-preco-valor-wrapper">
-                                  <span class="produto-preco-valor">{{ $produto->precos[0]['valor'] }}</span>
-                                </div>
+                              <div class="row produto-precos-valores justify-content-center">
+                                @foreach ($produto->precos as $precos)
+                                  <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
+                                    <span class="produto-preco-valor">{{ $precos['valor'] }}</span>
+                                  </div>
+                                @endforeach
                               </div>
                             </div>
                           </div>
                         </div>
                         <!-- Produto - END -->
-
                         @endif
                       @endforeach
                     </div>
@@ -137,7 +127,6 @@
         </div>
       </div>
       <!-- Seção - END -->
-
     @endforeach
   </div>
 </div>

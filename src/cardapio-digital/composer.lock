@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b627c22d798a3e121b176cdc8b1d60b",
+    "content-hash": "eb3b9fd94bf8294990aa7645ca7c7967",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4877,6 +4877,69 @@
             "time": "2019-10-24T08:53:34+00:00"
         },
         {
+            "name": "tjgazel/laravel-toastr",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tjgazel/laravel-toastr.git",
+                "reference": "3c1babf649ea6f1b0cdd3ab30126115d727f140c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tjgazel/laravel-toastr/zipball/3c1babf649ea6f1b0cdd3ab30126115d727f140c",
+                "reference": "3c1babf649ea6f1b0cdd3ab30126115d727f140c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "illuminate/session": "^5.5.0",
+                "illuminate/support": "^5.5.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TJGazel\\Toastr\\ToastrServiceProvider"
+                    ],
+                    "aliases": {
+                        "Toastr": "TJGazel\\Toastr\\Facades\\Toastr"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "helpers/helpers.php"
+                ],
+                "psr-4": {
+                    "TJGazel\\Toastr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Talles Gazel",
+                    "email": "tjgazel@gmail.com"
+                }
+            ],
+            "description": "Toastr notifications for laravel 5.5+, 6 and 7",
+            "homepage": "https://github.com/tjgazel/laravel-toastr",
+            "keywords": [
+                "auto discover",
+                "facade",
+                "helper",
+                "laravel",
+                "notification",
+                "php",
+                "toastr"
+            ],
+            "time": "2020-09-04T00:22:57+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v4.1.7",
             "source": {
@@ -6185,6 +6248,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {

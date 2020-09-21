@@ -12,7 +12,7 @@ use App\Models\QrCode;
 
 class AuthController extends Controller
 {
-    public function dashboard($viewId = 2)
+    public function dashboard($viewId = 1)
     {
       if (Auth::check() === true)
       {
