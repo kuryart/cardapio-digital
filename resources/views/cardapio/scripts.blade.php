@@ -34,7 +34,7 @@
         for (k = 0; k < produtoContainer.length; k++)
         {
           produtoTitle = produtoContainer[k].getElementsByClassName("produto-title");
-          produtoDescription = produtoContainer[k].getElementsByClassName("produto-description");
+          produtoDescription = produtoContainer[k].getElementsByClassName("produto-descricao");
           txtValueTitle = produtoTitle[0].innerHTML;
           txtValueDescription = produtoDescription[0].innerHTML;
 
