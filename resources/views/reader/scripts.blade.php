@@ -18,11 +18,15 @@
        url:"{{ route('reader.request') }}",
        data:{qrcode:qrCodeMessage},
        success: function(data) {
-           console.log(data);
-           window.location.href = "{{ route('cardapio') }}";
+           // console.log(data);
+           if (data.hasOwnProperty("success")) {
+             window.location.href = data["success"];
+           } else {
+             console.log(data["error"]);
+           }
        },
-       error: function(data) {
-           console.log(data);
+       error: function() {
+           console.log("Houve um erro ao processar a requisição.");
        }
     });
   }
@@ -41,7 +45,7 @@
         var cameraId = devices[0].id;
         var cameraLabel = devices[0].label;
         // .. use this to start scanning.
-        console.log("Success: Camera ID: " + cameraId + " | " + "Camera Label: " + cameraLabel + ".");
+        // console.log("Success: Camera ID: " + cameraId + " | " + "Camera Label: " + cameraLabel + ".");
         startScan(cameraId);
       }
     }).catch(err => {
@@ -63,15 +67,15 @@
       },
       qrCodeMessage => {
         // do something when code is read. For example:
-        console.log(`QR Code detected: ${qrCodeMessage}`);
+        // console.log(`QR Code detected: ${qrCodeMessage}`);
       },
       errorMessage => {
         // parse error, ideally ignore it. For example:
-        console.log(`QR Code no longer in front of camera.`);
+        // console.log(`QR Code no longer in front of camera.`);
       })
     .catch(err => {
       // Start failed, handle it. For example,
-      console.log(`Unable to start scanning, error: ${err}`);
+      console.log(`Não foi possível iniciar a leitura do QR Code. Erro: ${err}`);
     });
   }
 
@@ -92,12 +96,12 @@
       html5QrCode.scanFile(imageFile, true)
       .then(qrCodeMessage => {
         // success, use qrCodeMessage
-        console.log(qrCodeMessage);
+        // console.log(qrCodeMessage);
         onScanSuccess(qrCodeMessage);
       })
       .catch(err => {
         // failure, handle it.
-        console.log(`Error scanning file. Reason: ${err}`)
+        console.log(`Não foi possível ler o arquivo. Erro: ${err}`)
       });
     });
   }

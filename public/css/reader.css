@@ -1,6 +1,7 @@
 /* === Body === */
 body {
   overflow-y: scroll;
+  /* background-image: url("{{ asset('/images/background2.jpg') }}"); */
   background-image: url("/images/background2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;

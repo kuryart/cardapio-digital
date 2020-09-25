@@ -23,41 +23,6 @@
   });
 </script>
 
-<!-- <script>
-  $(function () {
-    $('[data-tooltip="tooltip"]').tooltip({container: 'body', trigger : 'hover'})
-  })
-</script> -->
-
-<script>
-  // Menu Secao
-  function AddSecao(){
-    document.getElementById('btn-add-secao').click();
-	}
-
-  function AddCategoria(){
-    document.getElementById('btn-add-categoria').click();
-  }
-
-  function AddProduto(){
-    document.getElementById('btn-add-produto').click();
-  }
-
-  var menuSecao = CtxMenu(".menu-secao");
-  menuSecao.addItem("Adicionar Seção", AddSecao, Icon = "images/secao.svg");
-  menuSecao.addSeparator();
-  menuSecao.addItem("Adicionar Categoria", AddCategoria, Icon = "images/categoria.svg");
-
-  var menuCategoria = CtxMenu(".menu-categoria");
-  menuCategoria.addItem("Adicionar Categoria", AddCategoria, Icon = "images/categoria.svg");
-  menuCategoria.addSeparator();
-  menuCategoria.addItem("Adicionar Produto", AddProduto, Icon = "images/produto.svg");
-
-  var menuProduto = CtxMenu(".menu-produto");
-  menuProduto.addItem("Adicionar Produto", AddProduto, Icon = "images/produto.svg");
-
-</script>
-
 <script>
   function searchProduto()
   {
@@ -161,7 +126,6 @@
   $(document).on("click", ".add-secao-link", function () {
     document.getElementById("add-secao-form").reset();
   });
-
 
   $(document).on("click", ".edit-secao-link", function () {
     document.getElementById("edit-secao-form").reset();
@@ -302,7 +266,6 @@
 
    $("#delete-produto-form").attr('action', newAction);
   });
-
 </script>
 
 <script>
@@ -472,6 +435,6 @@
 
 </script>
 
-<div id="app"></div>
-<script type="text/javascript" src="js/app.js"></script>
+<!-- <div id="app"></div>
+<script type="text/javascript" src="js/app.js"></script> -->
 {!! toastr()->render() !!}

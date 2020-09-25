@@ -48,7 +48,7 @@ class CategoriaController extends Controller
       toastr()->success('Categoria criada com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with('viewId');
     }
 
     return redirect()->route('admin.login');
@@ -90,7 +90,7 @@ class CategoriaController extends Controller
       toastr()->success('Categoria atualizada com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with(compact('viewId');
     }
 
     return redirect()->route('admin.login');
@@ -107,7 +107,7 @@ class CategoriaController extends Controller
       toastr()->success('Categoria excluída com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with(compact('viewId');
     }
 
     return redirect()->route('admin.login');

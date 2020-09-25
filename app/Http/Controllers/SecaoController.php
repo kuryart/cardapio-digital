@@ -62,7 +62,7 @@ class SecaoController extends Controller
       toastr()->success('Seção criada com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with('viewId');
     }
 
     return redirect()->route('admin.login');
@@ -103,7 +103,7 @@ class SecaoController extends Controller
       toastr()->success('Seção atualizada com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with('viewId');
     }
 
     return redirect()->route('admin.login');
@@ -120,7 +120,7 @@ class SecaoController extends Controller
       toastr()->success('Seção excluída com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with('viewId');
     }
 
     return redirect()->route('admin.login');
@@ -132,7 +132,8 @@ class SecaoController extends Controller
     {
       Excel::import(new SecaosImport, 'planilha-teste1.xlsx', 'public');
 
-      return redirect('/')->with('success', 'All good!');
+      toastr()->success('Seção criada com sucesso.');
+      return redirect('/');
     }
 
     return redirect()->route('admin.login');

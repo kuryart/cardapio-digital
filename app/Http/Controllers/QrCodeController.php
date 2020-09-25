@@ -47,7 +47,7 @@ class QrCodeController extends Controller
       toastr()->success('QR Code criado com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with('viewId');
     }
 
     return redirect()->route('admin.login');
@@ -88,7 +88,7 @@ class QrCodeController extends Controller
       toastr()->success('QR Code atualizado com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with('viewId');
     }
 
     return redirect()->route('admin.login');
@@ -105,7 +105,7 @@ class QrCodeController extends Controller
       toastr()->success('QR Code excluído com sucesso.');
       // Redireciona para a rota
       return redirect()->route('admin')
-                       ->with(compact('success', 'viewId'));
+                       ->with('viewId');
     }
 
     return redirect()->route('admin.login');

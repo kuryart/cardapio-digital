@@ -93,7 +93,7 @@ class ProdutoController extends Controller
         toastr()->success('Produto criado com sucesso.');
         // Redireciona para a rota
         return redirect()->route('admin')
-                         ->with(compact('success', 'viewId'));
+                         ->with('viewId');
       }
 
       return redirect()->route('admin.login');
@@ -180,7 +180,7 @@ class ProdutoController extends Controller
         toastr()->success('Produto atualizado com sucesso.');
         // Redireciona para a rota
         return redirect()->route('admin')
-                         ->with(compact('success', 'viewId'));
+                         ->with('viewId');
       }
 
       return redirect()->route('admin.login');
@@ -198,7 +198,7 @@ class ProdutoController extends Controller
         toastr()->success('Produto excluído com sucesso.');
         // Redireciona para a rota
         return redirect()->route('admin')
-                         ->with(compact('success', 'viewId'));
+                         ->with(compact('viewId');
       }
 
       return redirect()->route('admin.login');

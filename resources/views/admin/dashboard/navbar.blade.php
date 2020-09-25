@@ -6,7 +6,7 @@
     <div id="mainNav" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item homeLink">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="{{ route('main') }}">
               <span aria-hidden="true" class=" fa fa-spacer-right fa-home"></span>
             </a>
           </li>

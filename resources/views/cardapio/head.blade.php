@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Cardápio Digital</title>
+<link rel="icon"
+      type="image/png"
+      href="{{ asset('images/cd-icon.png') }}" />
 <!-- === Font Awesome === -->
 <link href="{{ asset('css/all.css') }}" rel="stylesheet" />
 <!-- === Bootstrap === -->

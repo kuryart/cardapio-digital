@@ -1,0 +1,17 @@
+- Compact na variável Success que não existe mais (inclusive no QR Code); [✓]
+- Caminho de css/app.css no header do dashboard; [✓]
+- Remover os temas na hora de rodar as migrations; [✓]
+- Legenda e valor dos preços não pode ser unique;
+- Aumentar o tamanho das colunas das legendas nos preços;
+- Remover a rota para registrar novo usuário; [✓]
+- Adicionar database transactions; 
+- Caminho da imagem de fundo no css da view reader; [✓]
+- Validar se existe o QR Code no banco de dados para redirecionar para o cardápio; [✓]
+- Reader não está conseguindo acessar as câmeras no servidor;
+- Ícone da home nas views cardapio e dashboard não está redirecionando para a home; [✓]
+- Dropdown menu na view dashboard está gerando um erro no console e o menu não fecha;
+ -> Isso estava ocorrendo por conta da inclusão de js/app.js na view dashboard para fazer o toastr funcionar. Possíveis soluções:
+   -> Reorganizar a localização do script;
+   -> Utilizar outra biblioteca de toasts;
+- Criar tratativas de erros melhores;
+- Adicionar um ícone em todas as páginas da aplicação; [✓]
