@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use App\Imports\SecaosImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Models\Secao;
@@ -42,7 +41,8 @@ class SecaoController extends Controller
     {
       // Valida requisição
       $request->validate([
-          'nome' => 'required',
+          'nome' => 'required|max:150',
+          'descricao' => 'max:700',
       ]);
 
       // // Armazena imagem
@@ -93,7 +93,8 @@ class SecaoController extends Controller
     if (Auth::check() === true)
     {
       $request->validate([
-          'nome' => 'required',
+          'nome' => 'required|max:150',
+          'descricao' => 'max:700',
       ]);
 
       $secao->update($request->all());
@@ -121,29 +122,6 @@ class SecaoController extends Controller
       // Redireciona para a rota
       return redirect()->route('admin')
                        ->with('viewId');
-    }
-
-    return redirect()->route('admin.login');
-  }
-
-  public function import()
-  {
-    if (Auth::check() === true)
-    {
-      Excel::import(new SecaosImport, 'planilha-teste1.xlsx', 'public');
-
-      toastr()->success('Seção criada com sucesso.');
-      return redirect('/');
-    }
-
-    return redirect()->route('admin.login');
-  }
-
-  public function testPage()
-  {
-    if (Auth::check() === true)
-    {
-      return view('import_test');
     }
 
     return redirect()->route('admin.login');

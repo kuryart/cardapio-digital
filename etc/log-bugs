@@ -1,8 +1,8 @@
 - Compact na variável Success que não existe mais (inclusive no QR Code); [✓]
 - Caminho de css/app.css no header do dashboard; [✓]
 - Remover os temas na hora de rodar as migrations; [✓]
-- Legenda e valor dos preços não pode ser unique;
-- Aumentar o tamanho das colunas das legendas nos preços;
+- Legenda e valor dos preços não pode ser unique; [✓]
+- Aumentar o tamanho das colunas das legendas nos preços; [✓]
 - Remover a rota para registrar novo usuário; [✓]
 - Adicionar database transactions; 
 - Caminho da imagem de fundo no css da view reader; [✓]
@@ -15,3 +15,4 @@
    -> Utilizar outra biblioteca de toasts;
 - Criar tratativas de erros melhores;
 - Adicionar um ícone em todas as páginas da aplicação; [✓]
+- Aumentar o limite de caracteres da descrição; [✓]

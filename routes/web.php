@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // === Auth ===
-// Auth::routes();
+Auth::routes();
 // === Home ===
 Route::get('/', 'MainController@main');
 Route::get('/home', 'HomeController@index')->name('home');
@@ -70,6 +70,9 @@ Route::get('/admin/logout', 'AuthController@logout')->name('admin.logout');
 Route::post('/admin/login/do', 'AuthController@login')->name('admin.login.do');
 
 // === TESTS ===
-Route::get('/import-test', 'SecaoController@testPage')->name('testPage');
-Route::get('/import-test/import', 'SecaoController@import')->name('importTest');
+// Route::get('/import-test', 'SecaoController@testPage')->name('testPage');
+// Route::get('/import-test/import', 'SecaoController@import')->name('importTest');
+
+Route::get('/import', 'ImportController@import')->name('import');
+
 Route::get('/general-tests', 'TestController@test')->name('generalTests');

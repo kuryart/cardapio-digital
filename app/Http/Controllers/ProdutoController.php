@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Produto;
 use App\Models\Preco;
 use TJGazel\Toastr\Facades\Toastr;
@@ -39,24 +38,24 @@ class ProdutoController extends Controller
       if (Auth::check() === true)
       {
         $request->validate([
-            'nome' => 'required',
-            'descricao' => 'required',
+            'nome' => 'required|max:150',
+            'descricao' => 'max:700',
             'categoria_id' => 'required',
-            'legenda1' => 'required',
-            'valor1' => 'required',
+            'legenda1' => 'required|max:12',
+            'valor1' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
         ]);
 
         if ($request->has('legenda2')) {
           $request->validate([
-              'legenda2' => 'required',
-              'valor2' => 'required',
+            'legenda2' => 'required|max:12',
+            'valor2' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
 
         if ($request->has('legenda3')) {
           $request->validate([
-              'legenda3' => 'required',
-              'valor3' => 'required',
+            'legenda3' => 'required|max:12',
+            'valor3' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
 
@@ -124,24 +123,24 @@ class ProdutoController extends Controller
       if (Auth::check() === true)
       {
         $request->validate([
-          'nome' => 'required',
-          'descricao' => 'required',
+          'nome' => 'required|max:150',
+          'descricao' => 'max:700',
           'categoria_id' => 'required',
-          'legenda1' => 'required',
-          'valor1' => 'required',
+          'legenda1' => 'required|max:12',
+          'valor1' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
         ]);
 
         if ($request->has('legenda2')) {
           $request->validate([
-              'legenda2' => 'required',
-              'valor2' => 'required',
+            'legenda2' => 'required|max:12',
+            'valor2' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
 
         if ($request->has('legenda3')) {
           $request->validate([
-              'legenda3' => 'required',
-              'valor3' => 'required',
+            'legenda3' => 'required|max:12',
+            'valor3' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
 
@@ -198,7 +197,7 @@ class ProdutoController extends Controller
         toastr()->success('Produto excluído com sucesso.');
         // Redireciona para a rota
         return redirect()->route('admin')
-                         ->with(compact('viewId');
+                         ->with('viewId');
       }
 
       return redirect()->route('admin.login');

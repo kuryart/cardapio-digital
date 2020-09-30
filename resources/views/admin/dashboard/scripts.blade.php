@@ -170,7 +170,7 @@
     var categoriaId = $(this).data('categoria_id');
     var secaoId = $(this).data('secao_id');
 
-    $("#edit-categoria-form").attr('action', "{{ route('categorias.edit', '||z||') }}");
+    $("#edit-categoria-form").attr('action', "{{ route('categorias.update', '||z||') }}");
 
     var action = $("#edit-categoria-form").attr('action');
     var newAction = action.replace("||z||", categoriaId);
@@ -210,7 +210,7 @@
     var produtoId = $(this).data('produto_id');
     var categoriaId = $(this).data('categoria_id');
 
-    $("#edit-produto-form").attr('action', "{{ route('produtos.edit', '||z||') }}");
+    $("#edit-produto-form").attr('action', "{{ route('produtos.update', '||z||') }}");
 
     var action = $("#edit-produto-form").attr('action');
     var newAction = action.replace("||z||", produtoId);

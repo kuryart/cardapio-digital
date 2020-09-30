@@ -37,7 +37,8 @@ class CategoriaController extends Controller
     if (Auth::check() === true)
     {
       $request->validate([
-          'nome' => 'required',
+          'nome' => 'required|max:150',
+          'descricao' => 'max:700',
           'secao_id' => 'required',
       ]);
 
@@ -79,7 +80,8 @@ class CategoriaController extends Controller
     if (Auth::check() === true)
     {
       $request->validate([
-        'nome' => 'required',
+        'nome' => 'required|max:150',
+        'descricao' => 'max:700',
         'secao_id' => 'required',
       ]);
 

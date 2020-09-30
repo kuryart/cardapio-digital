@@ -10,8 +10,8 @@ class CreateSecaosTable extends Migration
     {
         Schema::create('secaos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->unique();
-            $table->string('descricao')->nullable();
+            $table->string('nome', 150);
+            $table->string('descricao', 700)->nullable();
             $table->timestamps();
         });
     }

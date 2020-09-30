@@ -10,7 +10,7 @@ class CreatePrecosTable extends Migration
     {
         Schema::create('precos', function (Blueprint $table) {
             $table->id();
-            $table->string('legenda')->unique();
+            $table->string('legenda', 12);
             $table->decimal('valor', 5, 2);
             $table->foreignId('produto_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

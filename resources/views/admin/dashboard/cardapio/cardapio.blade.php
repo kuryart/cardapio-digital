@@ -68,53 +68,151 @@
                     <div class="card-body categoria-card-body">
                       @foreach ($produtos as $produto)
                         @if ($produto->categoria_id === $categoria->id)
-                        <!-- Produto - BEGIN -->
-                        <div class="container-fluid produto-container">
-                          <div class="row produto-main-wrapper">
-                            <div class="col-12 col-sm-12 col-md	col-lg col-xl produto-detalhes">
-                              <div class="row produto-header">
-                                <div class="col-auto produto-title-wrapper">
-                                  <span class="produto-title">{{ $produto->nome }}</span>
-                                </div>
-                                <div class="col produto-menu-wrapper">
-                                  <span class="produto-menu">
-                                    <div class="dropdown">
-                                      <button class="btn btn-primary btn-sm py-0 dropdown-toggle btn-dropdown-menu-produto" type="button" id="produto-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-bars"></i>
-                                      </button>
-                                      <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
-                                        <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
-                                        <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
-                                      </div>
+                          @if (count($produto->precos) === 1)
+                            <!-- Produto - BEGIN -->
+                            <div class="container-fluid produto-container">
+                              <div class="row produto-main-wrapper">
+                                <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-10 produto-detalhes">
+                                  <div class="row produto-header">
+                                    <div class="col-auto produto-title-wrapper">
+                                      <span class="produto-title">{{ $produto->nome }}</span>
                                     </div>
-                                  </span>
+                                    <div class="col produto-menu-wrapper">
+                                      <span class="produto-menu">
+                                        <div class="dropdown">
+                                          <button class="btn btn-primary btn-sm py-0 dropdown-toggle btn-dropdown-menu-produto" type="button" id="produto-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-bars"></i>
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
+                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
+                                            <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
+                                          </div>
+                                        </div>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="row produto-body">
+                                    <div class="col produto-descricao-wrapper">
+                                      <span class="produto-descricao">{{ $produto->descricao }}</span>
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="row produto-body">
-                                <div class="col produto-descricao-wrapper">
-                                  <span class="produto-descricao">{{ $produto->descricao }}</span>
+                                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 produto-precos">
+                                  <div class="row produto-precos-legendas justify-content-center no-gutters">
+                                    @foreach ($produto->precos as $preco)
+                                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 produto-preco-legenda-wrapper">
+                                        <span class="produto-preco-legenda">{{ $preco['legenda'] }}</span>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                  <div class="row produto-precos-valores justify-content-center no-gutters">
+                                    @foreach ($produto->precos as $preco)
+                                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 produto-preco-legenda-wrapper">
+                                        <span class="produto-preco-valor">{{ $preco['valor'] }}</span>
+                                      </div>
+                                    @endforeach
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                            <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto produto-precos">
-                              <div class="row produto-precos-legendas justify-content-center">
-                                @foreach ($produto->precos as $precos)
-                                  <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
-                                    <span class="produto-preco-legenda">{{ $precos['legenda'] }}</span>
+                            <!-- Produto - END -->
+                          @elseif (count($produto->precos) === 2)
+                            <!-- Produto - BEGIN -->
+                            <div class="container-fluid produto-container">
+                              <div class="row produto-main-wrapper">
+                                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 produto-detalhes">
+                                  <div class="row produto-header">
+                                    <div class="col-auto produto-title-wrapper">
+                                      <span class="produto-title">{{ $produto->nome }}</span>
+                                    </div>
+                                    <div class="col produto-menu-wrapper">
+                                      <span class="produto-menu">
+                                        <div class="dropdown">
+                                          <button class="btn btn-primary btn-sm py-0 dropdown-toggle btn-dropdown-menu-produto" type="button" id="produto-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-bars"></i>
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
+                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
+                                            <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
+                                          </div>
+                                        </div>
+                                      </span>
+                                    </div>
                                   </div>
-                                @endforeach
-                              </div>
-                              <div class="row produto-precos-valores justify-content-center">
-                                @foreach ($produto->precos as $precos)
-                                  <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
-                                    <span class="produto-preco-valor">{{ $precos['valor'] }}</span>
+                                  <div class="row produto-body">
+                                    <div class="col produto-descricao-wrapper">
+                                      <span class="produto-descricao">{{ $produto->descricao }}</span>
+                                    </div>
                                   </div>
-                                @endforeach
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 produto-precos">
+                                  <div class="row produto-precos-legendas justify-content-center no-gutters">
+                                    @foreach ($produto->precos as $preco)
+                                      <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
+                                        <span class="produto-preco-legenda">{{ $preco['legenda'] }}</span>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                  <div class="row produto-precos-valores justify-content-center no-gutters">
+                                    @foreach ($produto->precos as $preco)
+                                      <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
+                                        <span class="produto-preco-valor">{{ $preco['valor'] }}</span>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <!-- Produto - END -->
+                            <!-- Produto - END -->
+                          @elseif (count($produto->precos) === 3)
+                            <!-- Produto - BEGIN -->
+                            <div class="container-fluid produto-container">
+                              <div class="row produto-main-wrapper">
+                                <div class="col-12 col-sm-12 col-md-7	col-lg-7 col-xl-8 produto-detalhes">
+                                  <div class="row produto-header">
+                                    <div class="col-auto produto-title-wrapper">
+                                      <span class="produto-title">{{ $produto->nome }}</span>
+                                    </div>
+                                    <div class="col produto-menu-wrapper">
+                                      <span class="produto-menu">
+                                        <div class="dropdown">
+                                          <button class="btn btn-primary btn-sm py-0 dropdown-toggle btn-dropdown-menu-produto" type="button" id="produto-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-bars"></i>
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
+                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
+                                            <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
+                                          </div>
+                                        </div>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="row produto-body">
+                                    <div class="col produto-descricao-wrapper">
+                                      <span class="produto-descricao">{{ $produto->descricao }}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 produto-precos">
+                                  <div class="row produto-precos-legendas justify-content-center no-gutters">
+                                    @foreach ($produto->precos as $preco)
+                                      <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
+                                        <span class="produto-preco-legenda">{{ $preco['legenda'] }}</span>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                  <div class="row produto-precos-valores justify-content-center no-gutters">
+                                    @foreach ($produto->precos as $preco)
+                                      <div class="col-3 col-sm-3 col-md col-lg col-xl produto-preco-legenda-wrapper">
+                                        <span class="produto-preco-valor">{{ $preco['valor'] }}</span>
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Produto - END -->
+                          @endif
                         @endif
                       @endforeach
                     </div>
