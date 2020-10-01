@@ -27,24 +27,24 @@ class AllImport implements ToCollection
 
       if (trim($row[0]) === "sec") {
         $secao = Secao::create([
-            'nome' => strtoupper($row[1]),
+            'nome' => mb_strtoupper($row[1], 'UTF-8'),
             'descricao' => $row[2],
         ]);
       } elseif (trim($row[0]) === "cat") {
         $categoria = Categoria::create([
-            'nome' => strtoupper($row[1]),
+            'nome' => mb_strtoupper($row[1], 'UTF-8'),
             'descricao' => $row[2],
             'secao_id' => $secao->id,
         ]);
       } elseif (trim($row[0]) === "prod") {
         $produto = Produto::create([
-            'nome' => strtoupper($row[1]),
+            'nome' => mb_strtoupper($row[1], 'UTF-8'),
             'descricao' => $row[2],
             'categoria_id' => $categoria->id,
         ]);
       } elseif (trim($row[0]) === "prec") {
         $preco = Preco::create([
-            'legenda' => strtoupper($row[1]),
+            'legenda' => mb_strtoupper($row[1], 'UTF-8'),
             'valor' => $row[2],
             'produto_id' => $produto->id,
         ]);

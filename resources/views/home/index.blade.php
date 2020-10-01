@@ -50,7 +50,7 @@
   </section>
   <div class="tm-main-section light-gray-bg">
     <div class="container" id="main">
-      <section class="tm-section row">
+      <!-- <section class="tm-section row">
         <div class="col-lg-9 col-md-9 col-sm-8">
           <h2 class="tm-section-header gold-text tm-handwriting-font">The Best Coffee for you</h2>
           <h2>Cafe House</h2>
@@ -62,40 +62,40 @@
             <img src="img/1.jpg" alt="Image" class="img-circle img-thumbnail">
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="tm-section tm-section-margin-bottom-0 row">
         <div class="col-lg-12 tm-section-header-container">
-          <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Popular Items</h2>
+          <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Saiba Mais</h2>
           <div class="tm-hr-container"><hr class="tm-hr"></div>
         </div>
         <div class="col-lg-12 tm-popular-items-container">
           <div class="tm-popular-item">
             <img src="img/popular-1.jpg" alt="Popular" class="tm-popular-item-img">
             <div class="tm-popular-item-description">
-              <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
-              <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
+              <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">C</span>ardápio</h3><hr class="tm-popular-item-hr">
+              <p>Confira todos os nossos pratos e bebidas diretamente no nosso cardápio digital.</p>
               <div class="order-now-container">
-                <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
+                <a href="{{ route('reader') }}" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
               </div>
             </div>
           </div>
           <div class="tm-popular-item">
             <img src="img/popular-2.jpg" alt="Popular" class="tm-popular-item-img">
             <div class="tm-popular-item-description">
-              <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">c</span>appuccino</h3><hr class="tm-popular-item-hr">
-              <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
+              <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">D</span>elivery</h3><hr class="tm-popular-item-hr">
+              <p>Utilize nosso sistema de delivery para poder apreciar todas as nossas opções sem sair de casa.</p>
               <div class="order-now-container">
-                <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
+                <a href="https://deliveryapp.neemo.com.br/delivery/990" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
               </div>
             </div>
           </div>
           <div class="tm-popular-item">
             <img src="img/popular-3.jpg" alt="Popular" class="tm-popular-item-img">
             <div class="tm-popular-item-description">
-              <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">m</span>ocha</h3><hr class="tm-popular-item-hr">
-              <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
+              <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">T</span>erça Burguer</h3><hr class="tm-popular-item-hr">
+              <p>Toda terça-feira é dia da promoção Terça Burguer aqui no Café do Lado! Todos os hambúrgueres tradicionais, gourmets, vegetarianos e veganos com 15% de desconto! Confira nossos hambúrgueres no nosso Cardápio Digital:</p>
               <div class="order-now-container">
-                <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
+                <a href="{{ route('reader') }}" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
               </div>
             </div>
           </div>
@@ -103,32 +103,68 @@
       </section>
       <section class="tm-section row">
         <div class="col-lg-12 tm-section-header-container">
-          <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Today's Special</h2>
+          <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Nossas Delícias</h2>
           <div class="tm-hr-container"><hr class="tm-hr"></div>
         </div>
         <div class="col-lg-12 tm-special-container margin-top-60">
-          <div class="tm-special-container-left"> <!-- left -->
+          <div class="tm-special-container-left">
             <div class="tm-special-item">
               <div class="tm-special-img-container">
-                <img src="img/special-1.jpg" alt="Special" class="tm-special-img img-responsive">
-                <a href="#">
+                <img src="img/file-veloso.jpg" alt="Special" class="tm-special-img img-responsive">
+                <a href="{{ route('reader') }}">
                   <div class="tm-special-description">
-                    <h3 class="tm-special-title">Donec pede justo</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <h3 class="tm-special-title">Filé do Veloso</h3>
+                    <p>Medalhões de filet mignon grelhados, servidos com panaché de legumes grelhados, alho laminado crocante e arroz branco.</p>
                   </div>
                 </a>
               </div>
             </div>
+
+            <div class="tm-special-item">
+              <div class="tm-special-img-container">
+                <img src="img/file-mick-jagger.jpg" alt="Special" class="tm-special-img img-responsive">
+                <a href="{{ route('reader') }}">
+                  <div class="tm-special-description">
+                    <h3 class="tm-special-title">Filé Mick Jagger</h3>
+                    <p>Medalhões de filet mignon grelhados, servidos ao molho de cogumelos e acompanhados de fettuccine na manteiga, sálvia e azeite trufado.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="tm-special-item">
+              <div class="tm-special-img-container">
+                <img src="img/filet-au-poivre.jpg" alt="Special" class="tm-special-img img-responsive">
+                <a href="{{ route('reader') }}">
+                  <div class="tm-special-description">
+                    <h3 class="tm-special-title">Filet au Poivre</h3>
+                    <p>Medalhões de filet mignon grelhados, servidos ao molho de mix de pimentas do reino com creme de leite e mostarda Dijon, acompanhados de gratin de batatas.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="tm-special-item">
+              <div class="tm-special-img-container">
+                <img src="img/super-dupper-double.jpg" alt="Special" class="tm-special-img img-responsive">
+                <a href="{{ route('reader') }}">
+                  <div class="tm-special-description">
+                    <h3 class="tm-special-title">Super Dupper Double</h3>
+                    <p>Pão, dois hambúrgueres de Angus grelhados, cheddar cremoso, bacon, picles de pepino, tomate e molho barbecue.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
           </div>
-          <div class="tm-special-container-right"> <!-- right -->
+          <!-- <div class="tm-special-container-right">
             <div>
               <div class="tm-special-item">
                 <div class="tm-special-img-container">
-                  <img src="img/special-2.jpg" alt="Special" class="img-responsive">
+                  <img src="img/file-jimi-hendrix.jpg" alt="Special" class="img-responsive">
                   <a href="#">
                     <div class="tm-special-description">
-                      <h3 class="tm-special-title">Etiam sit amet</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                      <p>Medalhões de filet mignon grelhados com molho de cerveja preta e shitake. Acompanha gnocchi na manteiga, sálvia e azeite trufado.</p>
                     </div>
                   </a>
                 </div>
@@ -137,32 +173,32 @@
             <div class="tm-special-container-lower">
               <div class="tm-special-item">
                 <div class="tm-special-img-container">
-                  <img src="img/special-3.jpg" alt="Special" class="img-responsive">
+                  <img src="img/salmao-janis-joplin.jpg" alt="Special" class="img-responsive">
                   <a href="#">
                     <div class="tm-special-description">
-                      <p>Vivamus elementum</p>
+                      <p>Posta de salmão grelhada, servida sobre cama de mix de cogumelos, regada com manteiga de ervas e raspas de limão. Acompanham limão siciliano grelhado e risotto de alho-poró.</p>
                     </div>
                   </a>
                 </div>
               </div>
               <div class="tm-special-item">
                 <div class="tm-special-img-container">
-                  <img src="img/special-4.jpg" alt="Special" class="img-responsive">
+                  <img src="img/salada-caprese.jpg" alt="Special" class="img-responsive">
                   <a href="#">
                     <div class="tm-special-description">
-                      <p>Quisque rutrum.</p>
+                      <p>Burrata de mussarela de búfala com pesto de manjericão, tomates cereja, folhas de rúcula e tapenade de azeitonas pretas.</p>
                     </div>
                   </a>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
       <section class="tm-section">
         <div class="row">
           <div class="col-lg-12 tm-section-header-container">
-            <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Daily Menu</h2>
+            <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="img/logo.png" alt="Logo" class="tm-site-logo"> Cardápio Completo</h2>
             <div class="tm-hr-container"><hr class="tm-hr"></div>
           </div>
         </div>
@@ -172,16 +208,17 @@
               <img src="img/menu-board.png" alt="Menu board" class="tm-daily-menu-img">
             </div>
             <div class="col-lg-8 col-md-8">
-              <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+              <p>E aí, gostou? Confira essas e muitas outras maravilhosas opções no nosso cardápio digital completo, onde você vai encontrar:</p>
               <ol class="margin-top-30">
-                <li>Tellus eget condimentum rhoncus.</li>
-                <li>Sem quam semper libero.</li>
-                <li>Sit amet adipiscing sem neque sed ipsum.</li>
-                <li>Nam quam nunc, blandit vel, luctus pulvinar.</li>
-                <li>Maecenas nec odio et ante tincidunt tempus.</li>
-                <li>Donec vitae sapien ut libero ventenatis faucibus.</li>
+                <li>Entradas;</li>
+                <li>Porções;</li>
+                <li>Vinhos nacionais e importados;</li>
+                <li>Cervejas nacionais e importadas;</li>
+                <li>Sobremesas;</li>
+                <li>Lanches;</li>
+                <li>E muito mais!</li>
               </ol>
-              <a href="#" class="tm-more-button margin-top-30">Read More</a>
+              <a href="{{ route('reader') }}" class="tm-more-button margin-top-30">Acessar Cardápio</a>
             </div>
           </div>
         </div>
@@ -193,29 +230,30 @@
       <div class="container">
         <div class="row margin-bottom-60">
           <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
-            <h3 class="tm-footer-div-title">Main Menu</h3>
+            <h3 class="tm-footer-div-title">Mapa do Site</h3>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Directory</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Our Services</a></li>
+              <li><a href="{{ route('main') }}">Início</a></li>
+              <li><a href="{{ route('reader') }}">Cardápio</a></li>
+              <li><a href="https://deliveryapp.neemo.com.br/delivery/990">Delivery</a></li>
+              <!-- <li><a href="#">Blog</a></li>
+              <li><a href="#">Our Services</a></li> -->
             </ul>
           </nav>
           <div class="col-lg-5 col-md-5 tm-footer-div">
-            <h3 class="tm-footer-div-title">About Us</h3>
+            <img src="img/cafe-do-lado-logo.png" alt="Logo" class="tm-site-logo-footer">
+            <!-- <h3 class="tm-footer-div-title">Sobre Nós</h3>
             <p class="margin-top-15">Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-            <p class="margin-top-15">Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.</p>
+            <p class="margin-top-15">Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.</p> -->
           </div>
           <div class="col-lg-4 col-md-4 tm-footer-div">
-            <h3 class="tm-footer-div-title">Get Social</h3>
-            <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante.</p>
+            <h3 class="tm-footer-div-title">Redes Sociais</h3>
+            <p>Siga o Café do Lado nas nossas redes sociais e fique sempre por dentro das novidades.</p>
             <div class="tm-social-icons-container">
-              <a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
-              <a href="#" class="tm-social-icon"><i class="fa fa-youtube"></i></a>
-              <a href="#" class="tm-social-icon"><i class="fa fa-behance"></i></a>
+              <a href="https://www.facebook.com/cafedolado" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
+              <!-- <a href="https://twitter.com/cafedolado" class="tm-social-icon"><i class="fa fa-twitter"></i></a> -->
+              <a href="https://www.instagram.com/cafedolado/" class="tm-social-icon"><i class="fa fa-instagram"></i></a>
+              <!-- <a href="#" class="tm-social-icon"><i class="fa fa-youtube"></i></a>
+              <a href="#" class="tm-social-icon"><i class="fa fa-behance"></i></a> -->
             </div>
           </div>
         </div>
@@ -224,7 +262,7 @@
     <div>
       <div class="container">
         <div class="row tm-copyright">
-         <p class="col-lg-12 small copyright-text text-center">Copyright &copy; 2084 Your Cafe House</p>
+         <p class="col-lg-12 small copyright-text text-center">Copyright &copy; 2020 Café do Lado</p>
        </div>
      </div>
    </div>
