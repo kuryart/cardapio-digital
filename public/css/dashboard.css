@@ -297,10 +297,6 @@ body {
     margin-top: 20px;
   }
 
-  .produto-preco-column-adjust {
-    display: flex;
-  }
-
   /* .produto-title-wrapper{
     text-align: center;
   }
@@ -319,10 +315,6 @@ body {
     margin-top: 20px;
   }
 
-  .produto-preco-column-adjust {
-    display: flex;
-  }
-
   /* .produto-title-wrapper{
     text-align: center;
   }
@@ -337,19 +329,11 @@ body {
 }
 
 @media (max-width: 991px) {
-  .produto-preco-column-adjust {
-    display: none;
-  }
+
 }
 
 @media (max-width: 1199px) {
-  .produto-preco-column-adjust {
-    display: none;
-  }
-}
 
-.produto-preco-column-adjust {
-  display: none;
 }
 
 #toast-container>div {
