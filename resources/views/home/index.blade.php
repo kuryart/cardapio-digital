@@ -70,7 +70,7 @@
         </div>
         <div class="col-lg-12 tm-popular-items-container">
           <div class="tm-popular-item">
-            <img src="img/popular-1.jpg" alt="Popular" class="tm-popular-item-img">
+            <img src="img/cardapio.jpg" alt="Popular" class="tm-popular-item-img">
             <div class="tm-popular-item-description">
               <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">C</span>ardápio</h3><hr class="tm-popular-item-hr">
               <p>Confira todos os nossos pratos e bebidas diretamente no nosso cardápio digital.</p>
@@ -80,7 +80,7 @@
             </div>
           </div>
           <div class="tm-popular-item">
-            <img src="img/popular-2.jpg" alt="Popular" class="tm-popular-item-img">
+            <img src="img/delivery.jpg" alt="Popular" class="tm-popular-item-img">
             <div class="tm-popular-item-description">
               <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">D</span>elivery</h3><hr class="tm-popular-item-hr">
               <p>Utilize nosso sistema de delivery para poder apreciar todas as nossas opções sem sair de casa.</p>
@@ -90,10 +90,10 @@
             </div>
           </div>
           <div class="tm-popular-item">
-            <img src="img/popular-3.jpg" alt="Popular" class="tm-popular-item-img">
+            <img src="img/terca-burguer.jpg" alt="Popular" class="tm-popular-item-img">
             <div class="tm-popular-item-description">
               <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">T</span>erça Burguer</h3><hr class="tm-popular-item-hr">
-              <p>Toda terça-feira é dia da promoção Terça Burguer aqui no Café do Lado! Todos os hambúrgueres tradicionais, gourmets, vegetarianos e veganos com 15% de desconto! Confira nossos hambúrgueres no nosso Cardápio Digital:</p>
+              <p>Toda terça-feira é dia da promoção Terça Burguer aqui no Café do Lado!</p>
               <div class="order-now-container">
                 <a href="{{ route('reader') }}" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
               </div>
