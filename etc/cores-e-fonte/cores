@@ -1,0 +1,34 @@
+- vermelho: cardápio vermelho;
+- verde: veggie, sucos e saladas;
+- preto: cardápio preto;
+- violeta escuro: vinhos;
+- cor de cerveja: cervejas;
+
+- verde: 
+   - seção: 
+      - caso secao_id seja VEGGIE (2);
+   - categoria: 
+      - caso categoria_id seja SUCOS (8, 9, 10) ou SALADA (16) 
+      - ou secao_id seja VEGGIE (2);
+- vermelho: 
+   - seção: 
+      - caso secao_id seja CAFETERIA, SEÇÃO SEM NOME, LANCHES, SOBREMESAS E BEBIDAS (1, 3, 4, 5, 6);
+   - categoria: 
+      - caso secao_id seja CAFETERIA (1) e categoria_id não seja SUCOS (8, 9, 10);
+      - caso secao_id seja SEÇÃO SEM NOME (3) e categoria_id não seja SALADA (16);
+      - caso secao_id seja LANCHES, SOBREMESAS E BEBIDAS (4, 5, 6);
+- preto:
+   - seção: 
+      - caso secao_id seja PRATOS (7);
+   - categoria: 
+      - caso secao_id seja PRATOS (7);   
+- violeta:
+   - seção: 
+      - caso secao_id seja de (8) a (14);
+   - categoria: 
+      - caso secao_id seja de (8) a (14);
+- cor de cerveja: 
+   - seção: 
+      - caso secao_id seja (15);
+   - categoria: 
+      - caso secao_id seja (15);
