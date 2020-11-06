@@ -1,11 +1,12 @@
 /* === Body === */
 body {
   overflow-y: scroll;
-  /* background-image: url("{{ asset('/images/background2.jpg') }}"); */
-  background-image: url("/images/background2.jpg");
-  background-repeat: no-repeat;
+  /* background-image: url("/images/background2.jpg"); */
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  /* background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: auto;
+  background-size: auto; */
 }
 
 #overlay {
@@ -17,7 +18,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  background-color: rgba(0,0,0,0.0); /* Black background with opacity */
   z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
@@ -92,7 +93,7 @@ body {
 
 /* === Jumbotron === */
 .jumbotron{
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .txt-light{

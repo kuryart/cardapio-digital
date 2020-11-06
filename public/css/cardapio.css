@@ -1,7 +1,32 @@
+/* === Fonts === */
+@font-face {
+  font-family: 'Aller Display';
+  src: url('../fonts/AllerDisplay_Std_Rg.ttf');  
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_Std_BdIt.ttf');
+  font-weight: bold;
+  font-style: italic;  
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-R.ttf');  
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-B.ttf');
+  font-weight: bold;  
+}
+
 /* === Body === */
 body {
   /* background-image: url("/images/background.jpg"); */
-  background-color: #e4e4e4;
+  /* background-color: #e4e4e4; */
+  background-color: #e5e5e5;
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-y: scroll;
@@ -69,28 +94,146 @@ body {
   padding-right: 5px;
 }
 
+/* === Main Div === */
+.main-div {
+  margin: 20px 6px 10px 6px;
+}
+
+/* === Cardápio Digital Header */
+.cardapio-digital-header {
+  font-family: 'Caveat', cursive;
+  font-size: 56px ;
+  font-weight: 700;
+  padding-left: 33px;
+}
+
 /* === Card === */
 .card{
   background-color: transparent;
+  border: none;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.card-body {
+  border: #1f1f1f solid 1px;
 }
 
 /* === Seção === */
-.secao-header{
-  background-color: #333333;
+/* -> Green */
+.secao-header-green {
+  background-color: #00672d;
+  border: #003D1B solid 1px;
 }
 
-.secao-header .btn-link {
-  font-family: 'Lalezar', cursive;
-  font-size: 48px;
-  color: #e4e4e4;
+.secao-header-green .btn-link {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  font-size: 32px;
+  /* color: #e4e4e4; */
+  color: #f2f2f2;
 }
 
-.secao-header .btn-link:hover {
-  color: #a07945;
+.secao-header-green .btn-link:hover {
+  color: #c9ac83;
 }
 
+/* -> Red */
+.secao-header-red {
+  background-color: #c00911;
+  border: #9B0810 solid 1px;
+}
+
+.secao-header-red .btn-link {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  font-size: 32px;
+  /* color: #e4e4e4; */
+  color: #f2f2f2;
+}
+
+.secao-header-red .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* -> Black */
+.secao-header-black{
+  background-color: #2e2b2c;
+  border: #201E1E solid 1px;
+}
+
+.secao-header-black .btn-link {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  font-size: 32px;
+  /* color: #e4e4e4; */
+  color: #f2f2f2;
+}
+
+.secao-header-black .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* -> Violet */
+.secao-header-violet{
+  background-color: #3a0329;
+  border: #27021B solid 1px;
+}
+
+.secao-header-violet .btn-link {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  font-size: 32px;
+  /* color: #e4e4e4; */
+  color: #f2f2f2;
+}
+
+.secao-header-violet .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* -> Beer */
+.secao-header-beer{
+  background-color: #85611b;
+  border: #664B15 solid 1px;
+}
+
+.secao-header-beer .btn-link {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  font-size: 32px;
+  /* color: #e4e4e4; */
+  color: #f2f2f2;
+}
+
+.secao-header-beer .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* -> Default */
+.secao-header-default{
+  background-color: #676767;
+}
+
+.secao-header-default .btn-link {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  font-size: 32px;
+  /* color: #e4e4e4; */
+  color: #f2f2f2;
+}
+
+.secao-header-default .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* - Container */
 .secao-container{
   margin-left: -10px;
+}
+
+/* Secao Card Body */
+.secao-card-body{
+  background-color: #f2f2f2;
 }
 
 /* === Categoria === */
@@ -98,26 +241,156 @@ body {
   margin-bottom: 10px;
 }
 
-.categoria-header{
-  background-color: #333333;
+/* Green */
+.categoria-header-green{
+  background-color: #00672d;
 }
 
-.categoria-header .btn-link {
+.categoria-header-green .btn-link {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  font-size: 24px;
+  color: #f2f2f2;
+}
+
+.categoria-header-green .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* Red */
+.categoria-header-red{
+  background-color: #c00911;
+}
+
+.categoria-header-red .btn-link {
   font-family: 'Lalezar', cursive;
   font-size: 28px;
-  color: #e4e4e4;
+  color: #f2f2f2;
 }
 
-.categoria-header .btn-link:hover {
-  color: #a07945;
+.categoria-header-red .btn-link:hover {
+  color: #c9ac83;
 }
 
+/* Black */
+.categoria-header-black{
+  background-color: #2e2b2c;
+}
+
+.categoria-header-black .btn-link {
+  font-family: 'Lalezar', cursive;
+  font-size: 28px;
+  color: #f2f2f2;
+}
+
+.categoria-header-black .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* Violet */
+.categoria-header-violet{
+  background-color: #3a0329;
+}
+
+.categoria-header-violet .btn-link {
+  font-family: 'Lalezar', cursive;
+  font-size: 28px;
+  color: #f2f2f2;
+}
+
+.categoria-header-violet .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* Beer */
+.categoria-header-beer{
+  background-color: #85611b;
+}
+
+.categoria-header-beer .btn-link {
+  font-family: 'Lalezar', cursive;
+  font-size: 28px;
+  color: #f2f2f2;
+}
+
+.categoria-header-beer .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* Default */
+.categoria-header-default{
+  background-color: #676767;
+}
+
+.categoria-header-default .btn-link {
+  font-family: 'Lalezar', cursive;
+  font-size: 28px;
+  color: #f2f2f2;
+}
+
+.categoria-header-default .btn-link:hover {
+  color: #c9ac83;
+}
+
+/* Container */
 .categoria-container{
   margin-left: -10px;
 }
 
 .categoria-card-body{
-  background-color: #fffffaff;
+  background-color: #ffffff;
+}
+
+/* === Button dropdown menu Secao === */
+.btn-dropdown-menu-secao{
+  border: 1px solid #fffffaff;
+  background-color: transparent;
+  font-size: 0.8em;
+  margin-bottom: 6px;
+  width: 72px;
+}
+
+.btn-dropdown-menu-secao:hover, .btn-dropdown-menu-secao:active,
+  .btn-dropdown-menu-secao:focus, .btn-dropdown-menu-secao:visited{
+  border-color: #a07945 !important;
+  background-color: #a07945 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* === Button dropdown menu Categoria === */
+.btn-dropdown-menu-categoria{
+  border: 1px solid #fffffaff;
+  background-color: transparent;
+  font-size: 0.6em;
+  margin-bottom: 6px;
+  width: 56px;
+}
+
+.btn-dropdown-menu-categoria:hover, .btn-dropdown-menu-categoria:active,
+  .btn-dropdown-menu-categoria:focus, .btn-dropdown-menu-categoria:visited{
+  border-color: #a07945 !important;
+  background-color: #a07945 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* === Button dropdown menu Produto === */
+.btn-dropdown-menu-produto{
+  border: 1px solid rgba(51, 51, 51, 1);
+  background-color: transparent;
+  color: rgba(51, 51, 51, 1);
+  font-size: 0.7em;
+  width: 32px;
+  padding-left: 3px;
+}
+
+.btn-dropdown-menu-produto:hover, .btn-dropdown-menu-produto:active,
+  .btn-dropdown-menu-produto:focus, .btn-dropdown-menu-produto:visited{
+  border-color: #a07945 !important;
+  background-color: #a07945 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* === Expand/Collapse All Button === */
@@ -161,6 +434,12 @@ body {
 
 #btn-collapse-all:hover {
   background-color: #7c4a24;
+}
+
+/* === QR Code === */
+.main-qr-code-div{
+  background-color: #fffffaff;
+  padding: 30px 30px 30px 30px;
 }
 
 /* === Produto === */
@@ -229,8 +508,8 @@ body {
   display: block; /* This will put the pseudo element on its own line. */
   width: 100%; /* Change this to whatever width you want. */
   padding-top: 3px; /* This creates some space between the element and the border. */
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 12px;
   border-bottom: 1px dotted rgba(51, 51, 51, 0.5); /* This creates the border. Replace black with whatever color you want. */
 }
 
@@ -276,4 +555,8 @@ body {
 
 @media (max-width: 1199px) {
 
+}
+
+#toast-container>div {
+opacity: 1;
 }

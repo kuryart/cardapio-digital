@@ -32,6 +32,7 @@
       <tr>
           <td>{{ $qrCode->id }}</td>
           <td>{{ $qrCode->hash }}</td>
+          {{-- <td>{{ $qrCode->hash }}</td> --}}
           <td>
               <form action="{{ route('qrCodes.destroy',$qrCode->id) }}" method="POST">
                   @csrf

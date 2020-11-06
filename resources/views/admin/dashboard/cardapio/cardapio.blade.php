@@ -5,15 +5,15 @@
     @foreach($secaos as $secao)
       <!-- Seção - BEGIN -->
       <div class="card secao-wrapper">
-        @if ($secao->id === 2)
+        @if ($secao->id === 6 || $secao->id === 7)
           <div class="card-header secao-header-green" id="{{ 'secao-header-'.$secao->id }}">
-        @elseif (($secao->id === 1) || ($secao->id >= 3 && $secao->id <= 6))
+        @elseif ($secao->id >= 1 && $secao->id <= 5)
           <div class="card-header secao-header-red" id="{{ 'secao-header-'.$secao->id }}">
-        @elseif ($secao->id === 7)
+        @elseif ($secao->id === 8)
           <div class="card-header secao-header-black" id="{{ 'secao-header-'.$secao->id }}">
-        @elseif ($secao->id >= 8 && $secao->id <= 14)
+        @elseif ($secao->id >= 9 && $secao->id <= 15)
           <div class="card-header secao-header-violet" id="{{ 'secao-header-'.$secao->id }}">
-        @elseif ($secao->id === 15)
+        @elseif ($secao->id === 16)
           <div class="card-header secao-header-beer" id="{{ 'secao-header-'.$secao->id }}">
         @else 
           <div class="card-header secao-header-default" id="{{ 'secao-header-'.$secao->id }}">
@@ -50,27 +50,15 @@
               @if ($categoria->secao_id === $secao->id)
                 <!-- Categoria - BEGIN -->
                 <div class="card categoria-wrapper">
-                  @if ($categoria->secao_id === 2)
+                  @if ($secao->id === 6 || $secao->id === 7)
                     <div class="card-header categoria-header-green" id="{{ 'categoria-header-'.$categoria->id }}">
-                  @elseif ($categoria->secao_id === 1)                    
-                    @if ($categoria->id >= 8 && $categoria->id <= 10)
-                      <div class="card-header categoria-header-green" id="{{ 'categoria-header-'.$categoria->id }}">
-                    @else
-                      <div class="card-header categoria-header-red" id="{{ 'categoria-header-'.$categoria->id }}">     
-                    @endif
-                  @elseif ($categoria->secao_id === 3)
-                    @if ($categoria->id === 16)
-                      <div class="card-header categoria-header-green" id="{{ 'categoria-header-'.$categoria->id }}">
-                    @else
-                      <div class="card-header categoria-header-red" id="{{ 'categoria-header-'.$categoria->id }}">     
-                    @endif
-                  @elseif ($categoria->secao_id >= 4 && $categoria->secao_id <= 6)
+                  @elseif ($secao->id >= 1 && $secao->id <= 5)                    
                     <div class="card-header categoria-header-red" id="{{ 'categoria-header-'.$categoria->id }}">
-                  @elseif ($categoria->secao_id === 7)
+                  @elseif ($secao->id === 8)
                     <div class="card-header categoria-header-black" id="{{ 'categoria-header-'.$categoria->id }}">
-                  @elseif ($categoria->secao_id >= 8 && $categoria->secao_id <= 14)
+                  @elseif ($secao->id >= 9 && $secao->id <= 15)
                     <div class="card-header categoria-header-violet" id="{{ 'categoria-header-'.$categoria->id }}">
-                  @elseif ($categoria->secao_id === 15)
+                  @elseif ($secao->id === 16)
                     <div class="card-header categoria-header-beer" id="{{ 'categoria-header-'.$categoria->id }}">
                   @else 
                     <div class="card-header categoria-header-default" id="{{ 'categoria-header-'.$categoria->id }}">

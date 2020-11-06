@@ -2,11 +2,24 @@
 
 @section('content')
   <div class="main-div">
+    
     <div class="accordion" id="cardapio-accordion">
       @foreach($secaos as $secao)
         <!-- Seção - BEGIN -->
         <div class="card secao-wrapper">
-          <div class="card-header secao-header" id="{{ 'secao-header-'.$secao->id }}">
+          @if ($secao->id === 6 || $secao->id === 7)
+            <div class="card-header secao-header-green" id="{{ 'secao-header-'.$secao->id }}">
+          @elseif ($secao->id >= 1 && $secao->id <= 5)
+            <div class="card-header secao-header-red" id="{{ 'secao-header-'.$secao->id }}">
+          @elseif ($secao->id === 8)
+            <div class="card-header secao-header-black" id="{{ 'secao-header-'.$secao->id }}">
+          @elseif ($secao->id >= 9 && $secao->id <= 15)
+            <div class="card-header secao-header-violet" id="{{ 'secao-header-'.$secao->id }}">
+          @elseif ($secao->id === 16)
+            <div class="card-header secao-header-beer" id="{{ 'secao-header-'.$secao->id }}">
+          @else 
+            <div class="card-header secao-header-default" id="{{ 'secao-header-'.$secao->id }}">
+          @endif
             <h2 class="mb-0">
               <div class="container-fluid secao-container">
                 <div class="row align-items-center">
@@ -20,12 +33,24 @@
             </h2>
           </div>
           <div id="{{ 'secao-collapse-'.$secao->id }}" class="collapse show collapse-cardapio-item" aria-labelledby="{{ 'secao-header-'.$secao->id }}" data-parent="#cardapio-accordion">
-            <div class="card-body">
+            <div class="card-body secao-card-body">
               @foreach($categorias as $categoria)
                 @if ($categoria->secao_id === $secao->id)
                   <!-- Categoria - BEGIN -->
                   <div class="card categoria-wrapper">
-                    <div class="card-header categoria-header" id="{{ 'categoria-header-'.$categoria->id }}">
+                    @if ($secao->id === 6 || $secao->id === 7)
+                      <div class="card-header categoria-header-green" id="{{ 'categoria-header-'.$categoria->id }}">
+                    @elseif ($secao->id >= 1 && $secao->id <= 5)                    
+                      <div class="card-header categoria-header-red" id="{{ 'categoria-header-'.$categoria->id }}">
+                    @elseif ($secao->id === 8)
+                      <div class="card-header categoria-header-black" id="{{ 'categoria-header-'.$categoria->id }}">
+                    @elseif ($secao->id >= 9 && $secao->id <= 15)
+                      <div class="card-header categoria-header-violet" id="{{ 'categoria-header-'.$categoria->id }}">
+                    @elseif ($secao->id === 16)
+                      <div class="card-header categoria-header-beer" id="{{ 'categoria-header-'.$categoria->id }}">
+                    @else 
+                      <div class="card-header categoria-header-default" id="{{ 'categoria-header-'.$categoria->id }}">
+                    @endif
                       <h2 class="mb-0">
                         <div class="container-fluid categoria-container">
                           <div class="row align-items-center">
