@@ -72,4 +72,4 @@ Route::post('/admin/login/do', 'AuthController@login')->name('admin.login.do');
 // === TESTS ===
 // Route::get('/import', 'ImportController@import')->name('import');
 
-Route::get('/general-tests', 'TestController@test')->name('generalTests');
+// Route::get('/general-tests', 'TestController@test')->name('generalTests');
