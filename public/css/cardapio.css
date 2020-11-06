@@ -140,7 +140,7 @@ body {
 /* -> Red */
 .secao-header-red {
   background-color: #c00911;
-  border: #9B0810 solid 1px;
+  border: #9B0810 solid 1px; 
 }
 
 .secao-header-red .btn-link {
