@@ -7,8 +7,8 @@
       @include('admin.dashboard.cardapio.cardapio')
     </div>
 
-    <div class="qrcode hide">
+    {{-- <div class="qrcode hide">
       @include('qr_codes.index')
-    </div>
+    </div> --}}
   </div>
 @endsection
