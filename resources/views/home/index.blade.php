@@ -22,7 +22,7 @@
           <nav class="tm-nav">
             <ul>
               <li><a href="{{ route('main') }}" class="active">Home</a></li>
-              <li><a href="{{ route('reader') }}">Cardápio</a></li>
+              <li><a href="{{ route('cardapio') }}">Cardápio</a></li>
               <li><a href="https://deliveryapp.neemo.com.br/delivery/990">Delivery</a></li>
               <!-- <li><a href="contact.html">Contact</a></li> -->
             </ul>
@@ -75,7 +75,7 @@
               <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">C</span>ardápio</h3><hr class="tm-popular-item-hr">
               <p>Confira todos os nossos pratos e bebidas diretamente no nosso cardápio digital.</p>
               <div class="order-now-container">
-                <a href="{{ route('reader') }}" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
+                <a href="{{ route('cardapio') }}" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@
               <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">T</span>erça Burguer</h3><hr class="tm-popular-item-hr">
               <p>Toda terça-feira é dia da promoção Terça Burguer aqui no Café do Lado!</p>
               <div class="order-now-container">
-                <a href="{{ route('reader') }}" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
+                <a href="{{ route('cardapio') }}" class="order-now-link tm-handwriting-font">Vamos Lá!</a>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
             <div class="tm-special-item">
               <div class="tm-special-img-container">
                 <img src="img/file-veloso.jpg" alt="Special" class="tm-special-img img-responsive">
-                <a href="{{ route('reader') }}">
+                <a href="{{ route('cardapio') }}">
                   <div class="tm-special-description">
                     <h3 class="tm-special-title">Filé do Veloso</h3>
                     <p>Medalhões de filet mignon grelhados, servidos com panaché de legumes grelhados, alho laminado crocante e arroz branco.</p>
@@ -123,7 +123,7 @@
             <div class="tm-special-item">
               <div class="tm-special-img-container">
                 <img src="img/file-mick-jagger.jpg" alt="Special" class="tm-special-img img-responsive">
-                <a href="{{ route('reader') }}">
+                <a href="{{ route('cardapio') }}">
                   <div class="tm-special-description">
                     <h3 class="tm-special-title">Filé Mick Jagger</h3>
                     <p>Medalhões de filet mignon grelhados, servidos ao molho de cogumelos e acompanhados de fettuccine na manteiga, sálvia e azeite trufado.</p>
@@ -135,7 +135,7 @@
             <div class="tm-special-item">
               <div class="tm-special-img-container">
                 <img src="img/filet-au-poivre.jpg" alt="Special" class="tm-special-img img-responsive">
-                <a href="{{ route('reader') }}">
+                <a href="{{ route('cardapio') }}">
                   <div class="tm-special-description">
                     <h3 class="tm-special-title">Filet au Poivre</h3>
                     <p>Medalhões de filet mignon grelhados, servidos ao molho de mix de pimentas do reino com creme de leite e mostarda Dijon, acompanhados de gratin de batatas.</p>
@@ -147,7 +147,7 @@
             <div class="tm-special-item">
               <div class="tm-special-img-container">
                 <img src="img/super-dupper-double.jpg" alt="Special" class="tm-special-img img-responsive">
-                <a href="{{ route('reader') }}">
+                <a href="{{ route('cardapio') }}">
                   <div class="tm-special-description">
                     <h3 class="tm-special-title">Super Dupper Double</h3>
                     <p>Pão, dois hambúrgueres de Angus grelhados, cheddar cremoso, bacon, picles de pepino, tomate e molho barbecue.</p>
@@ -218,7 +218,7 @@
                 <li>Lanches;</li>
                 <li>E muito mais!</li>
               </ol>
-              <a href="{{ route('reader') }}" class="tm-more-button margin-top-30">Acessar Cardápio</a>
+              <a href="{{ route('cardapio') }}" class="tm-more-button margin-top-30">Acessar Cardápio</a>
             </div>
           </div>
         </div>
@@ -233,7 +233,7 @@
             <h3 class="tm-footer-div-title">Mapa do Site</h3>
             <ul>
               <li><a href="{{ route('main') }}">Início</a></li>
-              <li><a href="{{ route('reader') }}">Cardápio</a></li>
+              <li><a href="{{ route('cardapio') }}">Cardápio</a></li>
               <li><a href="https://deliveryapp.neemo.com.br/delivery/990">Delivery</a></li>
               <!-- <li><a href="#">Blog</a></li>
               <li><a href="#">Our Services</a></li> -->

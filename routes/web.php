@@ -17,20 +17,21 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 // === Home ===
 Route::get('/', 'MainController@main');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/main', 'MainController@main')->name('main');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/main', 'MainController@teste')->name('main');
+Route::get('/temp', 'MainController@teste')->name('temp');
 Route::get('/cardapio', 'CardapioController@index')->name('cardapio');
 // === QR Code Reader ===
-Route::get('/reader', 'ReaderController@index')->name('reader');
-Route::post('reader/request', 'ReaderController@qrCodeRequestPost')->name('reader.request');
+// Route::get('/reader', 'ReaderController@index')->name('reader');
+// Route::post('reader/request', 'ReaderController@qrCodeRequestPost')->name('reader.request');
 // === QR Code ===
-Route::get('/qrCodes','QrCodeController@index')->name('qrCodes.index');
-Route::get('/qrCodes/create','QrCodeController@create')->name('qrCodes.create');
-Route::post('/qrCodes','QrCodeController@store')->name('qrCodes.store');
-Route::get('/qrCodes/{qrCode}','QrCodeController@show')->name('qrCodes.show');
-Route::get('/qrCodes/{qrCode}/edit','QrCodeController@edit')->name('qrCodes.edit');
-Route::put('/qrCodes/{qrCode}','QrCodeController@update')->name('qrCodes.update');
-Route::delete('/qrCodes/{qrCode}','QrCodeController@destroy')->name('qrCodes.destroy');
+// Route::get('/qrCodes','QrCodeController@index')->name('qrCodes.index');
+// Route::get('/qrCodes/create','QrCodeController@create')->name('qrCodes.create');
+// Route::post('/qrCodes','QrCodeController@store')->name('qrCodes.store');
+// Route::get('/qrCodes/{qrCode}','QrCodeController@show')->name('qrCodes.show');
+// Route::get('/qrCodes/{qrCode}/edit','QrCodeController@edit')->name('qrCodes.edit');
+// Route::put('/qrCodes/{qrCode}','QrCodeController@update')->name('qrCodes.update');
+// Route::delete('/qrCodes/{qrCode}','QrCodeController@destroy')->name('qrCodes.destroy');
 // === Produtos ===
 Route::get('/produtos','ProdutoController@index')->name('produtos.index');
 Route::get('/produtos/create','ProdutoController@create')->name('produtos.create');

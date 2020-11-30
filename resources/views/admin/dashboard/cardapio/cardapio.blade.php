@@ -1,5 +1,4 @@
-<div class="main-div">
-  
+<div class="main-div">  
 
   <div class="accordion" id="cardapio-accordion">
     @foreach($secaos as $secao)
@@ -33,7 +32,7 @@
                     </button>
                       <div class="dropdown-menu" aria-labelledby="secao-dropdown-menu">
                         <a class="dropdown-item add-secao-link" href="#" data-toggle="modal" data-target="#add-secao-modal"><i class="fas fa-layer-group"></i> Criar Nova Seção</a>
-                        <a class="dropdown-item edit-secao-link" data-secao_id="{{ $secao->id }}" href="#" data-toggle="modal" data-target="#edit-secao-modal"><i class="fas fa-edit"></i> Editar Seção "{{ $secao->nome }}"</a>
+                        <a class="dropdown-item edit-secao-link" data-secao_id="{{ $secao->id }}" data-secao_nome="{{ $secao->nome }}" href="#" data-toggle="modal" data-target="#edit-secao-modal"><i class="fas fa-edit"></i> Editar Seção "{{ $secao->nome }}"</a>
                         <a class="dropdown-item delete-secao-link" data-secao_id="{{ $secao->id }}" href="#" data-toggle="modal" data-target="#delete-secao-modal"><i class="fas fa-trash-alt"></i> Excluir Seção "{{ $secao->nome }}"</a>
                         <hr class="my-4">
                         <a class="dropdown-item add-categoria-link" data-secao_id="{{ $secao->id }}" href="#" data-toggle="modal" data-target="#add-categoria-modal"><i class="fas fa-sitemap"></i> Adicionar Categoria à "{{ $secao->nome }}"</a>
@@ -78,7 +77,7 @@
                                 <i class="fas fa-bars"></i>
                               </button>
                               <div class="dropdown-menu" aria-labelledby="categoria-dropdown-menu">
-                                <a class="dropdown-item edit-categoria-link" data-categoria_id="{{ $categoria->id }}" data-secao_id="{{ $secao->id }}" href="#" data-toggle="modal" data-target="#edit-categoria-modal"><i class="fas fa-edit"></i> Editar Categoria "{{ $categoria->nome }}"</a>
+                                <a class="dropdown-item edit-categoria-link" data-categoria_id="{{ $categoria->id }}" data-secao_id="{{ $secao->id }}" data-categoria_nome="{{ $categoria->nome }}" href="#" data-toggle="modal" data-target="#edit-categoria-modal"><i class="fas fa-edit"></i> Editar Categoria "{{ $categoria->nome }}"</a>
                                 <a class="dropdown-item delete-categoria-link" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#delete-categoria-modal"><i class="fas fa-trash-alt"></i> Excluir Categoria "{{ $categoria->nome }}"</a>
                                 <hr class="my-4">
                                 <a class="dropdown-item add-produto-link" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#add-produto-modal"><i class="fas fa-hamburger"></i> Adicionar Produto à "{{ $categoria->nome }}"</a>
@@ -110,7 +109,7 @@
                                             <i class="fas fa-bars"></i>
                                           </button>
                                           <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
-                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
+                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" data-produto_nome="{{ $produto->nome }}" data-produto_descricao="{{ $produto->descricao }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
                                             <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
                                           </div>
                                         </div>
@@ -201,7 +200,7 @@
                                             <i class="fas fa-bars"></i>
                                           </button>
                                           <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
-                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
+                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" data-produto_nome="{{ $produto->nome }}" data-produto_descricao="{{ $produto->descricao }}"  href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
                                             <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
                                           </div>
                                         </div>
@@ -288,7 +287,7 @@
                                             <i class="fas fa-bars"></i>
                                           </button>
                                           <div class="dropdown-menu" aria-labelledby="produto-dropdown-menu">
-                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
+                                            <a class="dropdown-item edit-produto-link" data-produto_id="{{ $produto->id }}" data-categoria_id="{{ $categoria->id }}" data-produto_nome="{{ $produto->nome }}" data-produto_descricao="{{ $produto->descricao }}" href="#" data-toggle="modal" data-target="#edit-produto-modal"><i class="fas fa-edit"></i> Editar Produto "{{ $produto->nome }}"</a>
                                             <a class="dropdown-item delete-produto-link" data-produto_id="{{ $produto->id }}" href="#" data-toggle="modal" data-target="#delete-produto-modal"><i class="fas fa-trash-alt"></i> Excluir Produto "{{ $produto->nome }}"</a>
                                           </div>
                                         </div>

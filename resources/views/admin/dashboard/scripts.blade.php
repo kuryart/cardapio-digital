@@ -131,6 +131,11 @@
     document.getElementById("edit-secao-form").reset();
 
     var secaoId = $(this).data('secao_id');
+    var secaoNome = $(this).data('secao_nome');
+
+    var secaoFormNome = document.getElementById('edit-secao-form-nome');
+
+    secaoFormNome.value = secaoNome;
 
     $("#edit-secao-form").attr('action', "{{ route('secaos.update', '||z||') }}");
 
@@ -169,6 +174,12 @@
 
     var categoriaId = $(this).data('categoria_id');
     var secaoId = $(this).data('secao_id');
+
+    var categoriaNome = $(this).data('categoria_nome');
+
+    var categoriaFormNome = document.getElementById('edit-categoria-form-nome');
+
+    categoriaFormNome.value = categoriaNome;
 
     $("#edit-categoria-form").attr('action', "{{ route('categorias.update', '||z||') }}");
 
@@ -209,6 +220,8 @@
 
     var produtoId = $(this).data('produto_id');
     var categoriaId = $(this).data('categoria_id');
+    var produtoNome = $(this).data('produto_nome');
+    var produtoDescricao = $(this).data('produto_descricao');
 
     $("#edit-produto-form").attr('action', "{{ route('produtos.update', '||z||') }}");
 
@@ -221,6 +234,14 @@
     var produtos = @json($produtos);
     var produto = produtos.find( ({ id }) => id === produtoId );
     var precos = produto.precos;
+
+    var produtoFormNome = document.getElementById('edit-produto-form-nome');
+    var produtoFormDescricao = document.getElementById('edit-produto-form-descricao');
+
+    produtoFormNome.value = produto.nome;
+    produtoFormDescricao = produto.descricao;
+
+    console.log(produto);
 
     $('.edit-produto-form-precos-sub-wrapper').remove();
 

@@ -13,9 +13,12 @@
           <li class="nav-item active">
             <a id="cardapio" class="nav-link" href="#cardapio">Cardápio</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a id="qrcode" class="nav-link" href="#qrcode">QR Codes</a>
-          </li>
+          </li> --}}
+          {{-- <li class="nav-item">
+            <a id="import" class="nav-link" href="#import">Importar Cardápio</a>
+          </li> --}}
         </ul>
     </div>
 

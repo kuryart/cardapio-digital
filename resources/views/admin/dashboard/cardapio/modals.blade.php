@@ -21,6 +21,12 @@
                 <input type="text" name="nome" class="form-control" placeholder="Nome">
               </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <strong>Cor:</strong>
+                <input type="color" name="cor" class="form-control" value="#e66465">
+              </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Salvar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
@@ -51,9 +57,15 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                 <strong>Nome:</strong>
-                <input type="text" name="nome" class="form-control" placeholder="Nome">
+                <input id="edit-secao-form-nome" type="text" name="nome" class="form-control" placeholder="Nome">
               </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <strong>Cor:</strong>
+                <input type="color" name="cor" class="form-control" value="#e66465">
+              </div>
+            </div>            
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Salvar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
@@ -126,6 +138,12 @@
                 <input class="form-control" id="add-categoria-input-secao-id" value="||z||" type="text" name="secao_id">
               </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <strong>Cor:</strong>
+                <input type="color" name="cor" class="form-control" value="#e66465">
+              </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Salvar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
@@ -156,7 +174,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                 <strong>Nome:</strong>
-                <input type="text" name="nome" class="form-control" placeholder="Nome">
+                <input id="edit-categoria-form-nome" type="text" name="nome" class="form-control" placeholder="Nome">
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -168,6 +186,12 @@
                       @endforeach
                     </select>
                 </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                <strong>Cor:</strong>
+                <input type="color" name="cor" class="form-control" value="#e66465">
+              </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Salvar</button>
@@ -338,14 +362,14 @@
              <div class="col-xs-12 col-sm-12 col-md-12">
                <div class="form-group">
                  <strong>Nome:</strong>
-                 <input id="edit-produto-form-input-nome" type="text" name="nome" class="form-control" placeholder="Nome">
+                 <input id="edit-produto-form-nome" type="text" name="nome" class="form-control" placeholder="Nome">
                </div>
              </div>
 
              <div class="col-xs-12 col-sm-12 col-md-12">
                <div class="form-group">
                  <strong>Descrição:</strong>
-                 <textarea id="edit-produto-form-textarea-descricao" class="form-control" name="descricao" rows="3" placeholder="Descrição do produto"></textarea>
+                 <textarea id="edit-produto-form-descricao" class="form-control" name="descricao" rows="3" placeholder="Descrição do produto"></textarea>
                </div>
              </div>
 
