@@ -236,7 +236,8 @@ ul {
 /* Welcome */
 .tm-welcome-section {
   /* background: #282726; */
-  background-image: url("/img/back-2.jpg");
+  /* background-image: url("/img/back-2.jpg"); */
+  background-image: url('../img/back-2.jpg');  
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
