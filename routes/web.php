@@ -20,6 +20,7 @@ Route::get('/', 'MainController@main');
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/main', 'MainController@teste')->name('main');
 Route::get('/temp', 'MainController@teste')->name('temp');
+Route::get('/galeria', 'MainController@galeria')->name('galeria');
 Route::get('/cardapio', 'CardapioController@index')->name('cardapio');
 // === QR Code Reader ===
 // Route::get('/reader', 'ReaderController@index')->name('reader');

@@ -17,4 +17,9 @@ class MainController extends Controller
   {
     return view('home.index');
   }
+
+  public function galeria()
+  {
+    return view('gallery.gallery');
+  }  
 }
