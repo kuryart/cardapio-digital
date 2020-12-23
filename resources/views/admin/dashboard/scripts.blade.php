@@ -459,3 +459,13 @@
 <!-- <div id="app"></div>
 <script type="text/javascript" src="js/app.js"></script> -->
 {!! toastr()->render() !!}
+
+<script>
+  $(function() {
+    $('form').submit(function() {
+      console.log('Legenda1: '+$('input[name="legenda1"]').val() + ' Valor1: '+ $('input[name="valor1"]').val()); // etc.
+      console.log('Legenda2: '+$('input[name="legenda2"]').val() + ' Valor2: '+ $('input[name="valor2"]').val()); // etc.
+      console.log('Legenda3: '+$('input[name="legenda3"]').val() + ' Valor3: '+ $('input[name="valor3"]').val()); // etc.
+    });
+  });
+</script>

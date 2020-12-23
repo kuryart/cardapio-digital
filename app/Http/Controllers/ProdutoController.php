@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Preco;
 use TJGazel\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Log;
 
 class ProdutoController extends Controller
 {
@@ -38,23 +39,48 @@ class ProdutoController extends Controller
       if (Auth::check() === true)
       {
         $request->validate([
-            'nome' => 'required|max:150',
-            'descricao' => 'max:700',
-            'categoria_id' => 'required',
-            'legenda1' => 'required|max:12',
-            'valor1' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
+          'nome' => 'required|max:150',
+          'descricao' => 'max:700',
+          'categoria_id' => 'required',
+          'valor1' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
         ]);
 
-        if ($request->has('legenda2')) {
+        $legenda1;
+        $legenda2;
+        $legenda3;
+
+        if($request->has('legenda1')) {
+          if(!$request->filled('legenda1')) {
+            $legenda1 = "";
+          } else {
+            $legenda1 = $request->legenda1;
+          }
+        }
+
+        if($request->has('legenda2')) {
+          if(!$request->filled('legenda2')) {
+            $legenda2 = "";
+          } else {
+            $legenda2 = $request->legenda2;
+          }
+        }
+        
+        if($request->has('legenda3')) {
+          if(!$request->filled('legenda3')) {
+            $legenda3 = "";
+          } else {
+            $legenda3 = $request->legenda3;
+          }
+        }        
+
+        if ($request->has('valor2')) {
           $request->validate([
-            'legenda2' => 'required|max:12',
             'valor2' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
 
-        if ($request->has('legenda3')) {
+        if ($request->has('valor3')) {
           $request->validate([
-            'legenda3' => 'required|max:12',
             'valor3' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
@@ -66,22 +92,22 @@ class ProdutoController extends Controller
         ]);
 
         Preco::create([
-          'legenda' => $request->legenda1,
+          'legenda' => $legenda1,
           'valor' => $request->valor1,
           'produto_id' => $produto->id,
         ]);
 
-        if ($request->has('legenda2')) {
+        if ($request->has('valor2')) {
           Preco::create([
-            'legenda' => $request->legenda2,
+            'legenda' => $legenda2,
             'valor' => $request->valor2,
             'produto_id' => $produto->id,
           ]);
         }
 
-        if ($request->has('legenda3')) {
+        if ($request->has('valor3')) {
           Preco::create([
-            'legenda' => $request->legenda3,
+            'legenda' => $legenda3,
             'valor' => $request->valor3,
             'produto_id' => $produto->id,
           ]);
@@ -126,20 +152,45 @@ class ProdutoController extends Controller
           'nome' => 'required|max:150',
           'descricao' => 'max:700',
           'categoria_id' => 'required',
-          'legenda1' => 'required|max:12',
           'valor1' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
         ]);
 
-        if ($request->has('legenda2')) {
+        $legenda1;
+        $legenda2;
+        $legenda3;
+
+        if($request->has('legenda1')) {
+          if(!$request->filled('legenda1')) {
+            $legenda1 = "";
+          } else {
+            $legenda1 = $request->legenda1;
+          }
+        }
+
+        if($request->has('legenda2')) {
+          if(!$request->filled('legenda2')) {
+            $legenda2 = "";
+          } else {
+            $legenda2 = $request->legenda2;
+          }
+        }
+        
+        if($request->has('legenda3')) {
+          if(!$request->filled('legenda3')) {
+            $legenda3 = "";
+          } else {
+            $legenda3 = $request->legenda3;
+          }
+        }        
+
+        if ($request->has('valor2')) {
           $request->validate([
-            'legenda2' => 'required|max:12',
             'valor2' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
 
-        if ($request->has('legenda3')) {
+        if ($request->has('valor3')) {
           $request->validate([
-            'legenda3' => 'required|max:12',
             'valor3' => ['required', 'regex:/^(\d+(?:[\.\,]\d{1,2})?)$/'],
           ]);
         }
@@ -153,22 +204,22 @@ class ProdutoController extends Controller
         Preco::where('produto_id', $produto->id)->delete();
 
         Preco::create([
-          'legenda' => $request->legenda1,
+          'legenda' => $legenda1,
           'valor' => $request->valor1,
           'produto_id' => $produto->id,
         ]);
 
-        if ($request->has('legenda2')) {
+        if ($request->has('valor2')) {
           Preco::create([
-            'legenda' => $request->legenda2,
+            'legenda' => $legenda2,
             'valor' => $request->valor2,
             'produto_id' => $produto->id,
           ]);
         }
 
-        if ($request->has('legenda3')) {
+        if ($request->has('valor3')) {
           Preco::create([
-            'legenda' => $request->legenda3,
+            'legenda' => $legenda3,
             'valor' => $request->valor3,
             'produto_id' => $produto->id,
           ]);

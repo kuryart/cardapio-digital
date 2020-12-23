@@ -1,3 +1,12 @@
+@if($errors->all())
+  @foreach($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+    Error:  
+    {{ $error }}
+    </div>
+  @endforeach
+@endif
+
 <div class="main-div">  
 
   <div class="accordion" id="cardapio-accordion">
